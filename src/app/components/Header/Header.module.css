@@ -1,0 +1,58 @@
+.header {
+    /* background-color: #00F; */
+    height: 9.6rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Integral CF', sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav_list {
+    /* background-color: #fff; */
+    display: flex;
+
+    font-family: 'Satoshi-Variable', sans-serif;
+    font-size: 1.6rem;
+    color: #000;
+    gap: 2.4rem;
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    width: 53.2rem;
+    height: 4.8rem;
+
+    padding-left: 1.8rem;
+
+    background-color: #f0f0f0;
+    border-radius: 62px;
+}
+
+.search input {
+    background-color: #f0f0f0;
+    font-family: 'Satoshi-Variable', sans-serif;
+    font-size: 1.6rem;
+}
+
+.search input::placeholder {
+    color: rgba(0, 0, 0, 40%);
+
+}
+
+.header_cart_profile {
+    display: flex;
+    gap: 1.6rem;
+}
