@@ -1,9 +1,10 @@
 .header {
-    /* background-color: #00F; */
     height: 9.6rem;
+
     display: flex;
-    gap: 4rem;
     justify-content: center;
+    margin: 0 auto;
+    gap: 4rem;
     align-items: center;
 }
 
@@ -19,16 +20,14 @@
 }
 
 .nav_list {
-    /* background-color: #fff; */
     display: flex;
-
     font-family: 'Satoshi-Variable', sans-serif;
     font-size: 1.6rem;
     color: #000;
     gap: 2.4rem;
 }
 
-.search form {
+.search {
     display: flex;
     align-items: center;
     gap: 1.4rem;
@@ -45,11 +44,11 @@
     background-color: #f0f0f0;
     font-family: 'Satoshi-Variable', sans-serif;
     font-size: 1.6rem;
+    width: 90%;
 }
 
 .search input::placeholder {
     color: rgba(0, 0, 0, 40%);
-
 }
 
 .header_cart_profile {
