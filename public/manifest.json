@@ -1,0 +1,12 @@
+{
+  "short_name": "Outfitter",
+  "name": "Outfitter - Clothing Store",
+  "icons": [
+    {
+      "src": "/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0"
+    }
+  ]
+}
