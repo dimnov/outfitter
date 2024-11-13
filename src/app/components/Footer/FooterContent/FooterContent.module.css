@@ -1,0 +1,10 @@
+.content {
+    height: 50rem;
+    background-color: #f0f0f0;
+    padding: 0 10rem;
+}
+
+.break {
+    border: 1px solid rgba(0, 0, 0, 10%);
+    margin-bottom: 2.5rem;
+}
