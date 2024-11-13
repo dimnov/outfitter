@@ -1,0 +1,76 @@
+/* Universal Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the default font family */
+body {
+    /* font-family: 'Arial', sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* background-color: #fff; */
+    /* Or your desired background color */
+}
+
+/* Remove default styles for links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset images to avoid unexpected space around them */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default button styles */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Make sure forms don't have any spacing */
+input,
+textarea,
+select {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Remove default table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* For mobile responsiveness */
+html {
+    font-size: 10px;
+}
+
+/* Fix body height for full-height layouts */
+html,
+body {
+    /* height: 100%; */
+}
+
+/* Set a consistent box model */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
