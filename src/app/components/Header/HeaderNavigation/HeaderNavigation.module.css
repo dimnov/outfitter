@@ -1,0 +1,11 @@
+.nav {
+    display: flex;
+}
+
+.nav_list {
+    display: flex;
+    font-family: 'Satoshi-Variable', sans-serif;
+    font-size: 1.6rem;
+    color: #000;
+    gap: 2.4rem;
+}
