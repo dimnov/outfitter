@@ -1,0 +1,111 @@
+.email_box {
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 124rem;
+    padding: 4.3rem 0;
+
+    background-color: #000;
+    border-radius: 20px;
+}
+
+.email_box>* {
+    margin: 0 6.4rem;
+}
+
+.email_box_header {
+    width: 55rem;
+    margin-top: -1rem;
+    font-family: "Integral CF", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 45px;
+    color: #fff;
+}
+
+.email_box_header.email {
+    width: 100%;
+}
+
+.email_box_form {
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    height: 11rem;
+    gap: 1.4rem;
+}
+
+.email_box_form>* {
+    height: 4.8rem;
+    border-radius: 62px;
+    background-color: #fff;
+    font-family: "Satoshi-Variable", sans-serif;
+}
+
+.email_box_form .input {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    gap: 1rem;
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 40%);
+}
+
+.email_box_form input {
+    width: 85%;
+}
+
+.email_box_form button {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.email_box_form button:hover {
+    background-color: rgba(255, 255, 255, 50%);
+    color: #fff;
+}
+
+.email_box_form button:active {
+    font-size: 1.8rem;
+}
+
+
+@media (max-width: 68em) {
+    .email_box {
+        width: 116rem;
+        justify-content: unset;
+    }
+}
+
+
+@media (max-width: 63em) {
+    .email_box {
+        width: 100rem;
+    }
+
+    .email_box_header {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 56em) {
+    .email_box {
+        flex-direction: column;
+        padding: 3rem 0;
+        width: 80rem;
+    }
+
+    .email_box_header {
+        width: 60rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+}
