@@ -1,0 +1,14 @@
+.section_brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  background-color: black;
+  margin-bottom: 7rem;
+}
+
+.brands_list {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
