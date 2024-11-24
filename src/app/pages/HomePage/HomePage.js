@@ -1,62 +1,34 @@
 import Image from "next/image";
 import styles from "./HomePage.module.css";
 
-import versace from "/public/images/brands/Versace.png";
-import zara from "/public/images/brands/Zara.png";
-import gucci from "/public/images/brands/Gucci.png";
-import prada from "/public/images/brands/Prada.png";
-import calvin from "/public/images/brands/Calvin.png";
-
-const brandImages = [
-  { src: versace, alt: "Versace Logo" },
-  { src: zara, alt: "Zara Logo" },
-  { src: gucci, alt: "Gucci Logo" },
-  { src: prada, alt: "Prada Logo" },
-  { src: calvin, alt: "Calvin Klein Logo" },
-];
+import Hero from "@/app/components/Home/Hero/Hero";
+import Brands from "@/app/components/Home/Brands/Brands";
+import HomeProducts from "@/app/components/Home/HomeProducts/HomeProducts";
 
 function HomePage() {
   return (
     <main className={styles.home_page}>
-      {/* Hero Section */}
-      <section className={styles.section_hero}>
-        <header className={styles.hero_header}>
-          <h2>FIND CLOTHES THAT MATCHES YOUR STYLE</h2>
-          <p>
-            Browse through our diverse range of meticulously crafted garments, designed to bring out
-            your individuality and cater to your sense of style.
-          </p>
-          <a href="#" className={styles.shop_now}>
-            Shop Now
-          </a>
-        </header>
-
-        {/* Stats Section */}
-        <div className={styles.stats}>
-          <div className={styles.stats_box}>
-            <p className={styles.number}>200+</p>
-            <p className={styles.text}>International Brands</p>
-          </div>
-          <div className={styles.stats_box}>
-            <p className={styles.number}>2,000+</p>
-            <p className={styles.text}>High-Quality Products</p>
-          </div>
-          <div className={styles.stats_box}>
-            <p className={styles.number}>30,000+</p>
-            <p className={styles.text}>Happy Customers</p>
+      <Hero />
+      <Brands />
+      <HomeProducts />
+      <section className={styles.section_categories}>
+        <div className={styles.categories_container}>
+          <header className={styles.categories_header}>BROWSE BY DRESS STYLE</header>
+          <div className={styles.categories_grid}>
+            <div className={styles.category_box}>
+              <p>Casual</p>
+            </div>
+            <div className={styles.category_box}>
+              <p>Formal</p>
+            </div>
+            <div className={styles.category_box}>
+              <p>Party</p>
+            </div>
+            <div className={styles.category_box}>
+              <p>Gym</p>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Brands Section */}
-      <section className={styles.section_brands}>
-        <ul className={styles.brands_list}>
-          {brandImages.map((brand, index) => (
-            <li key={index} className={styles.brand_item}>
-              <Image layout="intrinsic" src={brand.src} alt={brand.alt} />
-            </li>
-          ))}
-        </ul>
       </section>
     </main>
   );
