@@ -2,75 +2,80 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Set the default font family */
 body {
-    /* font-family: 'Arial', sans-serif; */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /* background-color: #fff; */
-    /* Or your desired background color */
+  /* font-family: 'Arial', sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #fff; */
+  /* Or your desired background color */
 }
 
 /* Remove default styles for links */
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Reset images to avoid unexpected space around them */
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Remove list styles */
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 /* Remove default button styles */
 button {
-    border: none;
-    background: none;
-    cursor: pointer;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 /* Make sure forms don't have any spacing */
 input,
 textarea,
 select {
-    outline: none;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Remove default table styling */
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 /* For mobile responsiveness */
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 /* Fix body height for full-height layouts */
 html,
 body {
-    /* height: 100%; */
+  /* height: 100%; */
 }
 
 /* Set a consistent box model */
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+hr {
+  border: 1px solid rgba(0, 0, 0, 10%);
+  margin-bottom: 2.5rem;
 }
