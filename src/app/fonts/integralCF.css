@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Integral CF";
+  src: url("../fonts/integralCF/IntegralCF-Bold.woff2") format("woff2"),
+    url("../fonts/integralCF/IntegralCF-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Integral CF";
+  src: url("../fonts/integralCF/IntegralCF-Regular.woff2") format("woff2"),
+    url("../fonts/integralCF/IntegralCF-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
