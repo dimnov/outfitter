@@ -1,16 +1,15 @@
 .copyright {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Satoshi-Variable', sans-serif;
-    font-size: 1.4rem;
-    color: rgba(0, 0, 0, 60%);
-    /* margin: 0 10rem; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 60%);
+  /* margin: 0 10rem; */
 }
 
 .payment_methods {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* gap: 1.2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 1.2rem; */
 }

@@ -1,92 +1,89 @@
 .navigation {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 10rem;
-    margin-bottom: 5rem;
-    padding-top: 15rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10rem;
+  margin-bottom: 5rem;
+  padding-top: 15rem;
 }
 
 .navigation_left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25rem;
-    height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25rem;
+  height: 16rem;
 }
 
 .navigation_left p {
-    font-family: 'Satoshi-Variable', sans-serif;
-    font-size: 1.4rem;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    color: rgba(0, 0, 0, 60%);
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, 60%);
 }
 
 .navigation_column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navigation_column ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .navigation_column p {
-    font-family: 'Satoshi-Variable', sans-serif;
-    font-weight: 500;
-    letter-spacing: 3px;
-    font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 1.6rem;
 }
 
 .navigation_column a {
-    font-family: 'Satoshi-Variable', sans-serif;
-    font-size: 1.6rem;
-    color: rgba(0, 0, 0, 60%);
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 60%);
 }
 
 .navigation_column a:hover {
-    font-size: 1.7rem;
-    color: rgba(0, 0, 0, 100%);
+  font-size: 1.7rem;
+  color: rgba(0, 0, 0, 100%);
 }
 
 .navigation_column a:active {
-    font-size: 1.8rem;
-    color: rgba(0, 0, 0, 100%);
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 100%);
 }
 
 .navigation_socials {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .navigation_socials a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 73em) {
-    .navigation {
-        column-gap: 5rem;
-    }
+  .navigation {
+    column-gap: 5rem;
+  }
 }
 
 @media (max-width: 63em) {
-    .navigation {
-        column-gap: 2rem;
-    }
+  .navigation {
+    column-gap: 2rem;
+  }
 
-    .navigation_left {
-        width: 20rem;
-        margin-right: 2rem;
-    }
+  .navigation_left {
+    width: 20rem;
+    margin-right: 2rem;
+  }
 }
 
 @media (max-width: 56em) {
-    .navigation {
-        column-gap: 1rem;
-        padding-top: 20rem;
-    }
+  .navigation {
+    column-gap: 1rem;
+    padding-top: 20rem;
+  }
 }
