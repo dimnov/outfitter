@@ -6,13 +6,11 @@
 }
 
 .stats_box .number {
-  font-family: "Satoshi-Variable", sans-serif;
   font-weight: bold;
   font-size: 4rem;
 }
 
 .stats_box .text {
-  font-family: "Satoshi-Variable", sans-serif;
   font-size: 1.6rem;
   color: rgba(0, 0, 0, 60%);
 }

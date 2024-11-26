@@ -14,7 +14,6 @@
 }
 
 .hero_header p {
-  font-family: "Satoshi-Variable", sans-serif;
   line-height: 2.2rem;
   font-size: 1.6rem;
 }
@@ -23,7 +22,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Satoshi-Variable", sans-serif;
   font-size: 1.6rem;
   width: 21rem;
   height: 5.2rem;
