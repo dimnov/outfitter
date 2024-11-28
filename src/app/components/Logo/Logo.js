@@ -1,10 +1,11 @@
+import Link from "next/link";
 import styles from "./Logo.module.css";
 
 function Logo() {
   return (
-    <a className={styles.logo} href="#">
+    <Link className={styles.logo} href="/">
       OUTFITTER
-    </a>
+    </Link>
   );
 }
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./HeaderNavigation.module.css";
 
 function HeaderNavigation() {
@@ -5,16 +6,16 @@ function HeaderNavigation() {
     <nav className={styles.nav}>
       <ul className={styles.nav_list}>
         <li>
-          <a href="#">Shop</a>
+          <Link href="/catalog">Shop</Link>
         </li>
         <li>
-          <a href="#">On Sale</a>
+          <Link href="#">On Sale</Link>
         </li>
         <li>
-          <a href="#">New Arrivals</a>
+          <Link href="#">New Arrivals</Link>
         </li>
         <li>
-          <a href="#">Brands</a>
+          <Link href="#">Brands</Link>
         </li>
       </ul>
     </nav>
