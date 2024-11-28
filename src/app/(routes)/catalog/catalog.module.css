@@ -1,0 +1,13 @@
+.catalog {
+  width: 124rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 200rem;
+}
+
+.main {
+  display: flex;
+  gap: 2rem;
+}
