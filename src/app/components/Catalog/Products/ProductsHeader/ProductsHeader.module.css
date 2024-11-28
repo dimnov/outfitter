@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.options {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort b {
+  color: #000;
+}
