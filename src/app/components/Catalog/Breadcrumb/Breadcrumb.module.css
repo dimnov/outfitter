@@ -1,0 +1,6 @@
+.breadcrumb {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
