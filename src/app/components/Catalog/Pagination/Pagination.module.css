@@ -1,0 +1,40 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pages_list {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.page {
+  font-size: 1.4rem;
+  padding: 1rem 1.7rem;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 50%);
+
+  cursor: pointer;
+}
+
+.page:hover,
+.page.active {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
