@@ -45,13 +45,13 @@
 }
 
 .navigation_column a:hover {
-  font-size: 1.7rem;
-  color: rgba(0, 0, 0, 100%);
+  font-weight: 500;
+  color: #000;
 }
 
 .navigation_column a:active {
-  font-size: 1.8rem;
-  color: rgba(0, 0, 0, 100%);
+  font-weight: 700;
+  color: #000;
 }
 
 .navigation_socials {

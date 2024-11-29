@@ -8,3 +8,11 @@
   color: #000;
   gap: 2.4rem;
 }
+
+.nav_list li:hover {
+  font-weight: 500;
+}
+
+.nav_list li:active {
+  font-weight: 700;
+}
