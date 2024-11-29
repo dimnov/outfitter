@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.product_box:hover {
+  cursor: pointer;
+}
+
 .product_info {
   display: flex;
   flex-direction: column;
@@ -15,7 +19,45 @@
   margin-top: 1.6rem;
 }
 
-.product_price {
+.score_box {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.score_stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.score_number {
+  font-size: 1.4rem;
+}
+
+.product_price_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
   font-size: 2.4rem;
   font-weight: 700;
+}
+
+.product_price {
+  color: #000;
+}
+
+.product_price_discount {
+  color: #999;
+  /* color: rgba(0, 0, 0, 40%); */
+  text-decoration: line-through;
+}
+
+.discount_percentage {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ff3333;
+
+  padding: 0.6rem 1.4rem;
+  background-color: rgba(255, 51, 51, 10%);
+  border-radius: 62px;
 }
