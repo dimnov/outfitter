@@ -20,7 +20,7 @@ function CategoryList() {
       {categories.map((cat) => (
         <li key={cat.id} className={`${styles.category_box} ${styles[cat.id]}`}>
           <Link href="#">
-            <Image layout="intrinsic" src={cat.src} alt={cat.alt} />
+            <Image unoptimized src={cat.src} alt={cat.alt} />
           </Link>
         </li>
       ))}

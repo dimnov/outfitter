@@ -6,7 +6,7 @@ import tshirt from "@images/products/tshirt.png";
 function ProductBox() {
   return (
     <div className={styles.product_box}>
-      <Image src={tshirt} layout="intrinsic" alt="tshirt" />
+      <Image src={tshirt} unoptimized alt="tshirt" />
       <div className={styles.product_info}>
         <p className={styles.product_title}>Gradient Graphic T-shirt</p>
         <div className={styles.score_box}>

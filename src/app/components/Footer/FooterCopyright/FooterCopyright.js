@@ -21,7 +21,7 @@ function FooterCopyright() {
       <p>Outfitter &copy;2000-2024, All Rights Reserved</p>
       <div className={styles.payment_methods}>
         {paymentMethods.map((method, index) => (
-          <Image key={index} layout="intrinsic" src={method.src} alt={method.alt} />
+          <Image key={index} unoptimized src={method.src} alt={method.alt} />
         ))}
       </div>
     </footer>

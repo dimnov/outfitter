@@ -4,6 +4,7 @@ import Image from "next/image";
 import tshirt from "/public/images/products/tshirt.png";
 
 function HomeProducts() {
+  // Here separate each box_products div, and each of them will receive an array with products from here
   return (
     <section className={styles.home_products}>
       {/* NEW ARRIVALS */}
@@ -11,25 +12,25 @@ function HomeProducts() {
         <p className={styles.box_products_title}>NEW ARRIVALS</p>
         <ul className={styles.box_products_list}>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
@@ -47,25 +48,25 @@ function HomeProducts() {
         <p className={styles.box_products_title}>TOP SELLING</p>
         <ul className={styles.box_products_list}>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>
           </li>
           <li className={styles.product_item}>
-            <Image layout="intrinsic" src={tshirt} alt={"asd"} />
+            <Image unoptimized src={tshirt} alt={"asd"} />
             <p className={styles.product_item_title}>T-shirt with Tape Details</p>
             {/* <p className={styles.product_item_score}>score</p> */}
             <p className={styles.product_item_price}>$120</p>

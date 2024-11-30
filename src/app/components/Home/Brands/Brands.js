@@ -21,7 +21,7 @@ function Brands() {
       <ul className={styles.brands_list}>
         {brandImages.map((brand, index) => (
           <li key={index} className={styles.brand_item}>
-            <Image layout="intrinsic" src={brand.src} alt={brand.alt} />
+            <Image unoptimized src={brand.src} alt={brand.alt} />
           </li>
         ))}
       </ul>
