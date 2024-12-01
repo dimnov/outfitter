@@ -1,9 +1,9 @@
 import styles from "./CategoryList.module.css";
 import CategoryItem from "../CategoryItem/CategoryItem";
-import { getAllImages } from "@/app/lib/data-service";
+import { getAllImagesFromFolder } from "@/app/lib/data-service";
 
 async function CategoryList() {
-  const categories = await getAllImages();
+  const categories = await getAllImagesFromFolder("categories");
 
   return (
     <ul className={styles.categories_grid}>
