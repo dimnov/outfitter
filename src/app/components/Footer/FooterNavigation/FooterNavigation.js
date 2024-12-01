@@ -1,8 +1,6 @@
-import Image from "next/image";
-import styles from "./FooterNavigation.module.css";
 import Logo from "../../Logo/Logo";
-
-const socials = ["Twitter.png", "Facebook.png", "Instagram.png", "Github.png"];
+import Socials from "../../Icons/Socials";
+import styles from "./FooterNavigation.module.css";
 
 function FooterNavigation() {
   return (
@@ -13,11 +11,7 @@ function FooterNavigation() {
           We have clothes that suits your style and which you’re proud to wear. From women to men.
         </p>
         <div className={styles.navigation_socials}>
-          {socials.map((social) => (
-            <a key={social} href="#">
-              <Image width={28} height={28} src={`/images/socials/${social}`} alt={social} />
-            </a>
-          ))}
+          <Socials />
         </div>
       </div>
       <div className={styles.navigation_column}>
