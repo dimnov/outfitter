@@ -1,0 +1,31 @@
+.carousel_box {
+  min-width: 34rem;
+  min-height: 18rem;
+  padding: 2.8rem 3.2rem;
+
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 20px;
+}
+
+.customer_score {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.customer_header {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.customer_name {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.customer_text {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: rgba(0, 0, 0, 60%);
+}
