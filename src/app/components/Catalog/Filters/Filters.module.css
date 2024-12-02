@@ -45,23 +45,3 @@
   flex-direction: column;
   gap: 2rem;
 }
-
-.filters_box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.filters_box:hover {
-  cursor: pointer;
-}
-
-.filters_box:hover p {
-  font-weight: 600;
-  color: rgb(0, 0, 0);
-}
-
-.filters_title {
-  font-size: 1.6rem;
-  color: rgba(0, 0, 0, 60%);
-}
