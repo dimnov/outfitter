@@ -1,11 +1,13 @@
 import styles from "./ProductsHeader.module.css";
 
-function ProductsHeader() {
+function ProductsHeader({ totalPerPage, totalCount }) {
   return (
     <header className={styles.header}>
       <h2>Casual</h2>
       <div className={styles.options}>
-        <p>Showing 1-10 of 100 Products</p>
+        <p>
+          Showing 1-{totalPerPage} of {totalCount} Products
+        </p>
         <div className={styles.sort}>
           <p>
             Sort by: <b>Most Popular</b>
