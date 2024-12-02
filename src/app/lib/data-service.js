@@ -18,12 +18,28 @@ export async function getAllImagesFromFolder(folderName) {
   return images;
 }
 
-export const getAllProducts = async () => {
-  const { data, error } = await supabase.from("products").select("*");
+export const getProductsPerPage = async (page, pageSize) => {
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize - 1;
+
+  const { data, error, count } = await supabase
+    .from("products")
+    .select("*", { count: "exact" }) // Count all products for pagination
+    .range(start, end); // Specify the range for pagination
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return { products: data };
+  return { products: data, count }; // Return products and total count
+};
+
+export const getAllTestimonials = async () => {
+  const { data, error } = await supabase.from("testimonials").select("*");
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return { testimonials: data };
 };
