@@ -1,15 +1,12 @@
 import styles from "./ProductsGrid.module.css";
-
 import ProductBox from "../ProductBox/ProductBox";
 
-function ProductsGrid() {
+function ProductsGrid({ products }) {
   return (
     <div className={styles.products_grid}>
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
+      {products?.map((product) => (
+        <ProductBox key={product.id} product={product} />
+      ))}
     </div>
   );
 }
