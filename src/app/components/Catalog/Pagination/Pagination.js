@@ -1,49 +1,46 @@
+"use client";
+
+import NextButton from "./Buttons/NextButton";
+import PreviousButton from "./Buttons/PreviousButton";
+import PagesList from "./PagesList/PagesList";
+
 import styles from "./Pagination.module.css";
 
-function Pagination() {
+function Pagination({ currentPage, totalPages, onPageChange }) {
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      onPageChange(currentPage + 1);
+    }
+  };
+
+  const handlePageClick = (pageNum) => {
+    onPageChange(pageNum);
+  };
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  const pages = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(i);
+  }
+
+  const disablePrev = currentPage === 1;
+  const disableNext = currentPage === totalPages;
+
   return (
     <div className={styles.pagination}>
-      <button className={styles.button}>
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12.8332 6.99996H1.1665M1.1665 6.99996L6.99984 12.8333M1.1665 6.99996L6.99984 1.16663"
-            stroke="black"
-            strokeWidth="1.67"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span>Previous</span>
-      </button>
-      <ul className={styles.pages_list}>
-        <li className={`${styles.page} ${styles.active}`}>1</li>
-        <li className={styles.page}>2</li>
-        <li className={styles.page}>3</li>
-      </ul>
-      <button className={styles.button}>
-        <span>Next</span>
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.1665 6.99996H12.8332M12.8332 6.99996L6.99984 1.16663M12.8332 6.99996L6.99984 12.8333"
-            stroke="black"
-            strokeWidth="1.67"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+      <PreviousButton onClick={handlePrev} disabled={disablePrev} />
+      <PagesList onClick={handlePageClick} currentPage={currentPage} pages={pages} />
+      <NextButton onClick={handleNext} disabled={disableNext} />
     </div>
   );
 }
