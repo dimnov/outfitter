@@ -8,7 +8,7 @@ function HeroHeader() {
         Browse through our diverse range of meticulously crafted garments, designed to bring out
         your individuality and cater to your sense of style.
       </p>
-      <a href="#" className={styles.shop_button}>
+      <a href="shop" className={styles.shop_button}>
         Shop Now
       </a>
     </header>

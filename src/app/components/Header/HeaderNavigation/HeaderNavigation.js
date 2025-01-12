@@ -6,7 +6,7 @@ function HeaderNavigation() {
     <nav className={styles.nav}>
       <ul className={styles.nav_list}>
         <li>
-          <Link href="/catalog">Shop</Link>
+          <Link href="/shop">Shop</Link>
         </li>
         <li>
           <Link href="#">On Sale</Link>
