@@ -1,11 +1,14 @@
 import styles from "./ProductsGrid.module.css";
 import ProductBox from "../ProductBox/ProductBox";
+import Link from "next/link";
 
 function ProductsGrid({ products }) {
   return (
     <div className={styles.products_grid}>
       {products?.map((product) => (
-        <ProductBox key={product.id} product={product} />
+        <Link href={`/products/${product.id}`} key={product.id}>
+          <ProductBox product={product} />
+        </Link>
       ))}
     </div>
   );
