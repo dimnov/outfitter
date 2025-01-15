@@ -34,6 +34,16 @@ export const getProductsPerPage = async (page, pageSize) => {
   return { products: data, count }; // Return products and total count
 };
 
+export const getProduct = async (productId) => {
+  const { data, error } = await supabase.from("products").select("*").eq("id", productId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return { product: data };
+};
+
 export const getAllTestimonials = async () => {
   const { data, error } = await supabase.from("testimonials").select("*");
 
