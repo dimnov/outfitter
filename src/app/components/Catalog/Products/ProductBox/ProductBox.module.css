@@ -1,10 +1,12 @@
 .product_box {
   display: flex;
   flex-direction: column;
+  border-radius: 16px;
 }
 
 .product_box:hover {
   cursor: pointer;
+  background-color: #f8f8f8;
 }
 
 .product_info {
