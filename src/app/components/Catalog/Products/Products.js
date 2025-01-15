@@ -10,7 +10,7 @@ import Pagination from "../Pagination/Pagination";
 import Loading from "./loading.js";
 import styles from "./Products.module.css";
 
-const pageSize = 3;
+const pageSize = 6;
 
 function Products() {
   const [products, setProducts] = useState([]);
