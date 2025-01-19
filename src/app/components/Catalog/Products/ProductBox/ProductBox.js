@@ -7,8 +7,6 @@ import ProductPriceBox from "../ProductPriceBox/ProductPriceBox";
 function ProductBox({ product }) {
   const { title, image_url, price, score, discount_price } = product;
 
-  const discountPercentage = ((price - discount_price) / price) * 100;
-
   return (
     <div className={styles.product_box}>
       <Image src={image_url} width={295} height={298} alt="tshirt" />
@@ -20,11 +18,7 @@ function ProductBox({ product }) {
           </div>
           <p className={styles.score_number}>{score}/5</p>
         </div>
-        <ProductPriceBox
-          discount_price={discount_price}
-          price={price}
-          discountPercentage={discountPercentage}
-        />
+        <ProductPriceBox discount_price={discount_price} price={price} />
       </div>
     </div>
   );
