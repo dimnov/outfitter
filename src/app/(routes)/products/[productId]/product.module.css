@@ -183,3 +183,8 @@
 .buttons_add:hover {
   background-color: #111111;
 }
+
+.product_details .fontSize {
+  font-size: 3.2rem;
+  margin-top: 1.4rem;
+}
