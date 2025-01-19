@@ -1,8 +1,9 @@
 .header {
   height: 9.6rem;
+  min-width: 124rem;
   display: flex;
-  justify-content: space-around;
-  margin: 0 10rem;
-  gap: 4rem;
+  justify-content: center;
   align-items: center;
+  margin: 0 4rem;
+  gap: 4rem;
 }

@@ -35,10 +35,10 @@ function FooterNavigation() {
         <p>HELP</p>
         <ul>
           <li>
-            <a href="#">Customer Support</a>
+            <a href="#">Support</a>
           </li>
           <li>
-            <a href="#">Delivery Details</a>
+            <a href="#">Delivery</a>
           </li>
           <li>
             <a href="#">Terms & Conditions</a>
@@ -55,7 +55,7 @@ function FooterNavigation() {
             <a href="#">Account</a>
           </li>
           <li>
-            <a href="#">Manage Deliveries</a>
+            <a href="#">Deliveries</a>
           </li>
           <li>
             <a href="#">Orders</a>
@@ -72,13 +72,13 @@ function FooterNavigation() {
             <a href="#">Free eBooks</a>
           </li>
           <li>
-            <a href="#">Development Tutorial</a>
+            <a href="#">Development</a>
           </li>
           <li>
-            <a href="#">How to - Blog</a>
+            <a href="#">Blog</a>
           </li>
           <li>
-            <a href="#">Youtube Playlist</a>
+            <a href="#">Playlist</a>
           </li>
         </ul>
       </div>

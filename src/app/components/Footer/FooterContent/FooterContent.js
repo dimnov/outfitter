@@ -6,7 +6,6 @@ function FooterContent() {
   return (
     <div className={styles.content}>
       <FooterNavigation />
-      <hr />
       <FooterCopyright />
     </div>
   );
