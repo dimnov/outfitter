@@ -35,7 +35,7 @@ export const getProductsPerPage = async (page, pageSize) => {
 };
 
 export const getProduct = async (productId) => {
-  const { data, error } = await supabase.from("products").select("*").eq("id", productId);
+  const { data, error } = await supabase.from("products").select("*").eq("id", productId).single();
 
   if (error) {
     throw new Error(error.message);
