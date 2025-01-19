@@ -6,7 +6,7 @@ function CarouselBox({ name, text }) {
   return (
     <div className={styles.carousel_box}>
       <div className={styles.customer_score}>
-        <StarScore score={5} />
+        <StarScore size={22} score={5} />
       </div>
       <div className={styles.customer_header}>
         <p className={styles.customer_name}>{name}</p>
