@@ -16,7 +16,7 @@ function ProductBox({ product }) {
         <p className={styles.product_title}>{title}</p>
         <div className={styles.score_box}>
           <div className={styles.score_stars}>
-            <StarScore score={score} />
+            <StarScore size={18} score={score} />
           </div>
           <p className={styles.score_number}>{score}/5</p>
         </div>
