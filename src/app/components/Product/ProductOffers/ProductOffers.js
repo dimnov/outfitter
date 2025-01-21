@@ -1,14 +1,19 @@
+import { getProductsPerPage } from "@/app/lib/data-service";
+import ProductBox from "../../Catalog/Products/ProductBox/ProductBox";
 import styles from "./ProductOffers.module.css";
+import Link from "next/link";
 
-function ProductOffers() {
+async function ProductOffers() {
+  const { products } = await getProductsPerPage(1, 4);
   return (
     <div className={styles.product_offers}>
-      <header>You might also like</header>
+      <h4 className={styles.header}>You might also like</h4>
       <div className={styles.product_offers_products}>
-        <div>box 1</div>
-        <div>box 2</div>
-        <div>box 3</div>
-        <div>box 4</div>
+        {products?.map((product) => (
+          <Link href={`/products/${product.id}`} key={product.id}>
+            <ProductBox product={product} />
+          </Link>
+        ))}
       </div>
     </div>
   );

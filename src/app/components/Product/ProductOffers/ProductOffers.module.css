@@ -1,0 +1,21 @@
+.product_offers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_offers .header {
+  font-family: "Integral CF", sans-serif;
+  font-weight: 700;
+  font-size: 4.8rem;
+  margin-top: 6.4rem;
+  margin-bottom: 5.5rem;
+}
+
+.product_offers_products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  margin-bottom: 20rem;
+}
