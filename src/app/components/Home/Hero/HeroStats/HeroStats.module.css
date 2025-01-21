@@ -1,8 +1,9 @@
 .stats {
-  padding-left: 10rem;
-
   display: flex;
+
   gap: 3.2rem;
+  min-width: 124rem;
+  margin: 0 auto;
 }
 
 .stats_box .number {
