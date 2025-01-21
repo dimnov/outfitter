@@ -1,0 +1,30 @@
+.quantity {
+  display: flex;
+  background-color: #f0f0f0;
+  border-radius: 62px;
+}
+
+.quantity button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 2rem;
+  border-radius: 62px;
+}
+
+.quantity button:hover {
+  background-color: #ececec;
+}
+
+.quantity p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000;
+
+  padding: 1.6rem 2rem;
+  border-radius: 62px;
+}
