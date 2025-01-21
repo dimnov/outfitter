@@ -1,0 +1,71 @@
+.product_reviews_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.product_header .header {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.product_header .reviews_number {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.product_reviews_header_buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+.product_reviews_header_buttons button {
+  padding: 1.6rem 2rem;
+  border-radius: 62px;
+  background-color: #f0f0f0;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.product_reviews_header_buttons .sort_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.1rem;
+}
+
+.product_reviews_header_buttons .post_btn {
+  color: #fff;
+  background-color: #000;
+}
+
+.product_reviews_comments {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.6rem;
+}
+
+.more_reviews_btn {
+  display: block;
+  margin: 0 auto;
+
+  padding: 1.6rem 5.4rem;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 62px;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.more_reviews_btn:hover {
+  background-color: #f0f0f0;
+}
