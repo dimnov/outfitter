@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import NextButton from "./Buttons/NextButton";
 import PreviousButton from "./Buttons/PreviousButton";
 import PagesList from "./PagesList/PagesList";
@@ -23,10 +24,12 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
     onPageChange(pageNum);
   };
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
 
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
