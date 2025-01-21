@@ -1,0 +1,9 @@
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  margin-bottom: 2.4rem;
+}
