@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  padding-left: 10rem;
   padding-top: 10rem;
-  width: 60rem;
+  max-width: 124rem;
+  margin: 0 auto;
 }
 
 .hero_header h2 {
