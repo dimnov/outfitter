@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export async function getAllImagesFromFolder(folderName) {
+export const getAllImagesFromFolder = async (folderName) => {
   const { data, error } = await supabase.storage.from(folderName).list();
 
   if (error) {
@@ -16,7 +16,7 @@ export async function getAllImagesFromFolder(folderName) {
   });
 
   return images;
-}
+};
 
 export const getProductsPerPage = async (page, pageSize) => {
   const start = (page - 1) * pageSize;
@@ -35,21 +35,27 @@ export const getProductsPerPage = async (page, pageSize) => {
 };
 
 export const getProduct = async (productId) => {
-  const { data, error } = await supabase.from("products").select("*").eq("id", productId).single();
+  const { data, error } = await supabase
+    .from("products")
+    .select("*, products_colors(*)")
+    .eq("id", productId)
+    .single();
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return { product: data };
+  return { productData: data };
 };
 
 export const getAllTestimonials = async () => {
-  const { data, error } = await supabase.from("testimonials").select("*");
+  const { data, error, count } = await supabase
+    .from("testimonials")
+    .select("*", { count: "exact" });
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return { testimonials: data };
+  return { testimonials: data, count };
 };
