@@ -2,6 +2,7 @@ import styles from "./HomeProducts.module.css";
 import Image from "next/image";
 
 import tshirt from "/public/images/products/tshirt.png";
+import Link from "next/link";
 
 function HomeProducts() {
   // Here separate each box_products div, and each of them will receive an array with products from here
@@ -36,9 +37,9 @@ function HomeProducts() {
             <p className={styles.product_item_price}>$120</p>
           </li>
         </ul>
-        <a href="#" className={styles.view_all_button}>
+        <Link href="#" className={styles.view_all_button}>
           View All
-        </a>
+        </Link>
       </div>
       <div className={styles.brake}>
         <hr />
