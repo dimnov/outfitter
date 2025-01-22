@@ -20,7 +20,7 @@ const BUTTONS = [
   },
 ];
 
-function ProductSections() {
+function ProductSections({ reviews }) {
   const [activeSection, setActiveSection] = useState("reviews");
 
   const handleSetActive = (section) => {
@@ -41,7 +41,7 @@ function ProductSections() {
         ))}
       </div>
 
-      <ProductSectionsContainer activeSection={activeSection} />
+      <ProductSectionsContainer reviews={reviews} activeSection={activeSection} />
     </div>
   );
 }
