@@ -45,7 +45,7 @@ function ProductDetails({ productData }) {
   const adjustQuantity = (action) => {
     setProduct((prevState) => ({
       ...prevState,
-      quantity: Math.max(1, prevState.quantity + (action === "+" ? 1 : -1)),
+      quantity: Math.max(1, prevState.quantity + (action === "add" ? 1 : -1)),
     }));
   };
 
