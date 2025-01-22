@@ -1,20 +1,26 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./ProductImageGrid.module.css";
 
-function ProductImageGrid() {
+function ProductImageGrid({ images = [] }) {
+  const [selectedImage, setSelectedImage] = useState(images[0]?.image_url || null);
+
+  const handleSelectImage = (imageUrl) => {
+    setSelectedImage(imageUrl);
+  };
+
   return (
-    <ul className={styles.product_images}>
-      <li className={`${styles.product_images_item} ${styles.small} ${styles.active}`}>
-        <img src="https://cngeboyvccurpfdvorce.supabase.co/storage/v1/object/public/products/tshirt.png" />
-      </li>
-      <li className={`${styles.product_images_item} ${styles.small}`}>
-        <img src="https://cngeboyvccurpfdvorce.supabase.co/storage/v1/object/public/products/tshirt.png" />
-      </li>
-      <li className={`${styles.product_images_item} ${styles.small}`}>
-        <img src="https://cngeboyvccurpfdvorce.supabase.co/storage/v1/object/public/products/tshirt.png" />
-      </li>
-      <li className={`${styles.product_images_item} ${styles.large}`}>
-        <img src="https://cngeboyvccurpfdvorce.supabase.co/storage/v1/object/public/products/tshirt.png" />
-      </li>
+    <ul className={styles.grid_container}>
+      {images.map(({ image_url }) => (
+        <li
+          key={image_url}
+          className={selectedImage === image_url ? styles.large_square : styles.small_square}
+          onClick={() => handleSelectImage(image_url)}
+        >
+          <img className={styles.img} src={image_url} />
+        </li>
+      ))}
     </ul>
   );
 }
