@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12rem;
+  min-height: 12rem;
   min-width: 124rem;
   background-color: black;
   margin-bottom: 7rem;
