@@ -1,9 +1,11 @@
 .header {
-  height: 9.6rem;
-  min-width: 124rem;
+  padding: 0 4rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 4rem;
   gap: 4rem;
+
+  min-height: 9.6rem;
+  max-width: 124rem;
+  margin: 0 auto;
 }

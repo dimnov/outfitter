@@ -1,22 +1,30 @@
 import Link from "next/link";
 import styles from "./HeaderNavigation.module.css";
 
+const LINKS = [
+  {
+    path: "/shop",
+    name: "Shop",
+  },
+  {
+    path: "#",
+    name: "On Sale",
+  },
+  {
+    path: "#",
+    name: "New Arrivals",
+  },
+];
+
 function HeaderNavigation() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.nav_list}>
-        <li>
-          <Link href="/shop">Shop</Link>
-        </li>
-        <li>
-          <Link href="#">On Sale</Link>
-        </li>
-        <li>
-          <Link href="#">New Arrivals</Link>
-        </li>
-        <li>
-          <Link href="#">Brands</Link>
-        </li>
+        {LINKS.map((link) => (
+          <li key={link.name}>
+            <Link href={link.path}>{link.name}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
