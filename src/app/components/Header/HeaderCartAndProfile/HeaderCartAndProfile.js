@@ -1,9 +1,10 @@
+import Link from "next/link";
 import styles from "./HeaderCartAndProfile.module.css";
 
 function HeaderCartAndProfile() {
   return (
     <div className={styles.header_cart_profile}>
-      <a href="#">
+      <Link href="/cart">
         <svg
           width="23"
           height="22"
@@ -16,8 +17,8 @@ function HeaderCartAndProfile() {
             fill="black"
           />
         </svg>
-      </a>
-      <a href="#">
+      </Link>
+      <Link href="/profile">
         <svg
           width="22"
           height="22"
@@ -30,7 +31,7 @@ function HeaderCartAndProfile() {
             fill="black"
           />
         </svg>
-      </a>
+      </Link>
     </div>
   );
 }
