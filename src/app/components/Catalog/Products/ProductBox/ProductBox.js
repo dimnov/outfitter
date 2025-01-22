@@ -5,11 +5,12 @@ import StarScore from "@/app/components/Icons/StarScore";
 import ProductPriceBox from "../ProductPriceBox/ProductPriceBox";
 
 function ProductBox({ product }) {
-  const { title, image_url, price, score, discount_price } = product;
+  const { title, products_images, price, score, discount_price } = product;
+  const productImage = products_images[0]?.image_url;
 
   return (
     <div className={styles.product_box}>
-      <Image src={image_url} width={295} height={298} alt="tshirt" />
+      <Image src={productImage || null} width={295} height={298} alt="tshirt" />
       <div className={styles.product_info}>
         <p className={styles.product_title}>{title}</p>
         <div className={styles.score_box}>

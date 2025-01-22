@@ -2,10 +2,10 @@ import ProductDetails from "../ProductDetails/ProductDetails";
 import ProductImageGrid from "../ProductImageGrid/ProductImageGrid";
 import styles from "./ProductContainer.module.css";
 
-function ProductContainer({ productData }) {
+function ProductContainer({ images, productData }) {
   return (
     <div className={styles.product_container}>
-      <ProductImageGrid image={productData.image_url} />
+      <ProductImageGrid images={images} />
       <ProductDetails productData={productData} />
     </div>
   );
