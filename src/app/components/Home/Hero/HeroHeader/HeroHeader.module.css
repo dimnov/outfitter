@@ -5,17 +5,21 @@
   padding-top: 10rem;
   max-width: 124rem;
   margin: 0 auto;
+  margin-bottom: 4.8rem;
 }
 
 .hero_header h2 {
   font-family: "Integral CF", sans-serif;
   line-height: 6.4rem;
   font-size: 6.4rem;
+  max-width: 58rem;
 }
 
-.hero_header p {
+.hero_header .hero_description {
   line-height: 2.2rem;
   font-size: 1.6rem;
+  max-width: 58rem;
+  color: rgba(0, 0, 0, 60%);
 }
 
 .shop_button {
@@ -28,4 +32,8 @@
   background-color: #000;
   border-radius: 62px;
   color: #fff;
+}
+
+.shop_button:hover {
+  background-color: rgba(0, 0, 0, 80%);
 }

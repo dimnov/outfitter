@@ -1,16 +1,17 @@
+import Link from "next/link";
 import styles from "./HeroHeader.module.css";
 
 function HeroHeader() {
   return (
     <header className={styles.hero_header}>
       <h2>FIND CLOTHES THAT MATCHES YOUR STYLE</h2>
-      <p>
+      <p className={styles.hero_description}>
         Browse through our diverse range of meticulously crafted garments, designed to bring out
         your individuality and cater to your sense of style.
       </p>
-      <a href="shop" className={styles.shop_button}>
+      <Link href="shop" className={styles.shop_button}>
         Shop Now
-      </a>
+      </Link>
     </header>
   );
 }

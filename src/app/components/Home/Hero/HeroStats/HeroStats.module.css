@@ -2,7 +2,7 @@
   display: flex;
 
   gap: 3.2rem;
-  min-width: 124rem;
+  max-width: 124rem;
   margin: 0 auto;
 }
 
