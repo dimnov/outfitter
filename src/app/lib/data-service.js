@@ -24,7 +24,7 @@ export const getProductsPerPage = async (page, pageSize) => {
 
   const { data, error, count } = await supabase
     .from("products")
-    .select("*", { count: "exact" }) // Count all products for pagination
+    .select("*, products_images(*)", { count: "exact" }) // Count all products for pagination
     .range(start, end); // Specify the range for pagination
 
   if (error) {
@@ -46,6 +46,32 @@ export const getProduct = async (productId) => {
   }
 
   return { productData: data };
+};
+
+export const getProductImages = async (productId) => {
+  const { data, error } = await supabase
+    .from("products_images")
+    .select("image_url")
+    .eq("product_id", productId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return { images: data };
+};
+
+export const getProductReviews = async (productId) => {
+  const { data, error } = await supabase
+    .from("products_reviews")
+    .select("*")
+    .eq("product_id", productId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return { reviews: data };
 };
 
 export const getAllTestimonials = async () => {
