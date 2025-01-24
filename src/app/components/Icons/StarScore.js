@@ -13,8 +13,8 @@ const Star = ({ fill, size }) => (
   </svg>
 );
 
-function StarScore({ score, maxScore = 5, size }) {
-  const stars = Array.from({ length: maxScore }, (_, index) => (
+function StarScore({ score, size }) {
+  const stars = Array.from({ length: 5 }, (_, index) => (
     <span key={index}>
       {index < score ? <Star fill={"#FFC633"} size={size} /> : <Star fill={"#ccc"} size={size} />}
     </span>
