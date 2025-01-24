@@ -85,3 +85,25 @@ export const getAllTestimonials = async () => {
 
   return { testimonials: data, count };
 };
+
+export const getProductsByCriteria = async (crit, ord = "asc", amount = 4) => {
+  const criteria = crit === "latest" ? "created_at" : crit;
+  const order = ord === "asc" ? true : false;
+
+  try {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .order(criteria, { ascending: order })
+      .limit(amount);
+
+    if (error) {
+      console.error(error.message);
+      return null;
+    }
+
+    return { products: data };
+  } catch (err) {
+    throw new Error(err.message);
+  }
+};
