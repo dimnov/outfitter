@@ -12,9 +12,9 @@ function ProductImageGrid({ images = [] }) {
 
   return (
     <ul className={styles.grid_container}>
-      {images.map(({ image_url }) => (
+      {images.map(({ id, image_url }) => (
         <li
-          key={image_url}
+          key={id}
           className={selectedImage === image_url ? styles.large_square : styles.small_square}
           onClick={() => handleSelectImage(image_url)}
         >
