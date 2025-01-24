@@ -13,9 +13,17 @@
   line-height: 6.4rem;
   font-size: 6.4rem;
   max-width: 58rem;
+
+  /* delete */
+  background-image: url("https://media1.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=6c09b952tl0htw6ygzbe6tej4a1iwqc61g5rcjmvxxa87h5w&ep=v1_gifs_search&rid=giphy.gif&ct=g");
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+
+  /* delete */
 }
 
-.hero_header .hero_description {
+.hero_description {
   line-height: 2.2rem;
   font-size: 1.6rem;
   max-width: 58rem;
