@@ -51,7 +51,7 @@ export const getProduct = async (productId) => {
 export const getProductImages = async (productId) => {
   const { data, error } = await supabase
     .from("products_images")
-    .select("image_url")
+    .select("id, image_url")
     .eq("product_id", productId);
 
   if (error) {
