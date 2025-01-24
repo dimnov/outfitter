@@ -1,82 +1,26 @@
 import styles from "./HomeProducts.module.css";
-import Image from "next/image";
+import { getProductsByCriteria } from "@/app/lib/data-service";
+import HomeProductsList from "./HomeProductsList/HomeProductsList";
 
-import tshirt from "/public/images/products/tshirt.png";
-import Link from "next/link";
+async function HomeProducts() {
+  const { products: newProducts } = await getProductsByCriteria("latest", "desc", 8);
+  const { products: bestSellingProducts } = await getProductsByCriteria("sold", "desc", 8);
 
-function HomeProducts() {
-  // Here separate each box_products div, and each of them will receive an array with products from here
   return (
     <section className={styles.home_products}>
-      {/* NEW ARRIVALS */}
-      <div className={styles.box_products}>
-        <p className={styles.box_products_title}>NEW ARRIVALS</p>
-        <ul className={styles.box_products_list}>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-        </ul>
-        <Link href="#" className={styles.view_all_button}>
-          View All
-        </Link>
-      </div>
+      <HomeProductsList
+        products={newProducts}
+        title={"NEW ARRIVALS"}
+        path={"/shop?category=party"}
+      />
       <div className={styles.brake}>
         <hr />
       </div>
-      {/* TOP SELLING */}
-      <div className={styles.box_products}>
-        <p className={styles.box_products_title}>TOP SELLING</p>
-        <ul className={styles.box_products_list}>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-          <li className={styles.product_item}>
-            <Image unoptimized src={tshirt} alt={"asd"} />
-            <p className={styles.product_item_title}>T-shirt with Tape Details</p>
-            {/* <p className={styles.product_item_score}>score</p> */}
-            <p className={styles.product_item_price}>$120</p>
-          </li>
-        </ul>
-        <a href="#" className={styles.view_all_button}>
-          View All
-        </a>
-      </div>
+      <HomeProductsList
+        products={bestSellingProducts}
+        title={"TOP SELLING"}
+        path={"/shop?category=party"}
+      />
     </section>
   );
 }
