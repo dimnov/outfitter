@@ -21,3 +21,7 @@
 .breadcrumbs_list a {
   margin-right: 1rem;
 }
+
+.breadcrumbs_list li a::first-letter {
+  text-transform: uppercase;
+}

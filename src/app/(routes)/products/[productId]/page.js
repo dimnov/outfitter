@@ -14,7 +14,7 @@ async function page({ params }) {
   return (
     <section className={styles.product}>
       <hr />
-      <Breadcrumbs />
+      <Breadcrumbs category={productData.category} />
       <ProductContainer images={images} productData={productData} />
       <ProductSections reviews={reviews} />
       <ProductOffers />
