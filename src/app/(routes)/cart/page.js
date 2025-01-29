@@ -10,7 +10,7 @@ function cart() {
     console.log("gg");
   };
   return (
-    <div className={styles.cart}>
+    <section className={styles.cart}>
       <hr />
       <Breadcrumb />
       <h3 className={styles.cart_title}>your cart</h3>
@@ -191,7 +191,7 @@ function cart() {
           <button className={styles.finish_button}>Finish Order</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
