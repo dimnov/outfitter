@@ -1,0 +1,146 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.form_container {
+  background-color: #fff;
+  border-radius: 19px;
+  padding: 4rem;
+  min-width: 52rem;
+
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+}
+
+.form_box_header {
+  margin-bottom: 4rem;
+}
+
+.form_box_header h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.form_box_header p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6.4rem;
+}
+
+.form_box_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.form_box_input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form_box_input label {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.form_box_input input {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid;
+  border-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.form_box_input input::placeholder {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.forget_password {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.forget_password:hover {
+  color: rgba(0, 0, 0, 60%);
+}
+
+.form_box_btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.checkbox_box {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.form_box_btns label {
+  font-size: 1.4rem;
+}
+
+.form_box_btns a {
+  color: rgba(0, 0, 0, 80%);
+}
+
+.form_box_btns a:hover {
+  color: rgba(0, 0, 0, 60%);
+}
+
+.form_box_btns button {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #000;
+  padding: 1.4rem;
+  border-radius: 16px;
+}
+
+.form_box_btns button:hover {
+  background-color: rgba(0, 0, 0, 80%);
+}
+
+.account_btn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account_btn_box p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.account_btn_box button {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-radius: 9px;
+  border: 1px solid #000;
+}
+
+.account_btn_box button:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 80%);
+}
