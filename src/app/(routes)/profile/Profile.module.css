@@ -1,8 +1,17 @@
 .profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #f0f0f0;
+}
+
+.profile_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding-top: 10rem;
+  padding-bottom: 20rem;
+
+  max-width: 124rem;
+  margin: 0 auto;
 }
 
 .form_container {
@@ -10,9 +19,6 @@
   border-radius: 19px;
   padding: 4rem;
   min-width: 52rem;
-
-  margin-top: 10rem;
-  margin-bottom: 20rem;
 }
 
 .form_box_header {
@@ -65,13 +71,13 @@
 .form_box_input input::placeholder {
   font-size: 1.4rem;
   font-weight: 500;
-  color: rgba(0, 0, 0, 60%);
+  color: rgba(0, 0, 0, 40%);
 }
 
 .forget_password {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #000;
+  color: rgba(0, 0, 0, 80%);
 
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -89,7 +95,22 @@
 
 .checkbox_box {
   display: flex;
-  gap: 1.2rem;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.checkbox {
+  width: 1.4rem;
+  height: 1.4rem;
+  appearance: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkbox:checked {
+  background-color: #000;
 }
 
 .form_box_btns label {
