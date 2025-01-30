@@ -1,0 +1,68 @@
+/* Form Input Component */
+.form_box_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.form_box_input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form_box_input label {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.form_box_input input {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid;
+  border-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.form_box_input input::placeholder {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 40%);
+}
+
+/* Error Message Component */
+.error_message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: red;
+}
+
+/* Toggle Button for Login/Register */
+.account_btn_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account_btn_box p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.account_btn_box button {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-radius: 9px;
+  border: 1px solid #000;
+}
+
+.account_btn_box button:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 80%);
+}
