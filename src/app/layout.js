@@ -4,6 +4,7 @@ import Header from "@/app/components/Header/Header";
 import "./fonts/satoshi.css";
 import "./fonts/integralCF.css";
 import "./globals.css";
+import { AuthProvider } from "./context/AuthProvider";
 
 export const metadata = {
   title: "Outfitter - Fashion Online Store",
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
