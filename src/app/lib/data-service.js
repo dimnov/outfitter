@@ -48,6 +48,20 @@ export const getProduct = async (productId) => {
   return { productData: data };
 };
 
+export const getProductCategory = async (productId) => {
+  const { data, error } = await supabase
+    .from("products")
+    .select("category")
+    .eq("id", productId)
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data ? data.category : null;
+};
+
 export const getProductImages = async (productId) => {
   const { data, error } = await supabase
     .from("products_images")
