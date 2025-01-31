@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./HeaderCartAndProfile.module.css";
+import { useAuth } from "@/app/context/AuthProvider";
 
 function HeaderCartAndProfile() {
+  const { user } = useAuth();
+
   return (
     <div className={styles.header_cart_profile}>
       <Link href="/cart">
@@ -18,7 +23,7 @@ function HeaderCartAndProfile() {
           />
         </svg>
       </Link>
-      <Link href="/profile">
+      <Link href={user ? "/account/settings" : "/account/sign"}>
         <svg
           width="22"
           height="22"

@@ -29,14 +29,14 @@ function FormContainer() {
         if (error) {
           setError(error);
         } else {
-          redirect("/shop");
+          redirect("/account/settings");
         }
       } else {
         const { error } = await login(email, password);
         if (error) {
           setError(error);
         } else {
-          redirect("/shop");
+          redirect("/account/settings");
         }
       }
     },
