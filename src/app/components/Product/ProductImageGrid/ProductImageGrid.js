@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import styles from "./ProductImageGrid.module.css";
+import { useProduct } from "@/app/context/ProductContext";
 
-function ProductImageGrid({ images = [] }) {
+function ProductImageGrid() {
+  const { images } = useProduct();
   const [selectedImage, setSelectedImage] = useState(images[0]?.image_url || null);
 
   const handleSelectImage = (imageUrl) => {

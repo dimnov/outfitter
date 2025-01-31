@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./ProductSections.module.css";
 import ProductSectionsContainer from "./ProductSectionsContainer/ProductSectionsContainer";
 import ProductSectionsButton from "./ProductSectionsButton/ProductSectionsButton";
+import { useProduct } from "@/app/context/ProductContext";
 
 const BUTTONS = [
   {
@@ -20,7 +21,8 @@ const BUTTONS = [
   },
 ];
 
-function ProductSections({ reviews }) {
+function ProductSections() {
+  const { reviews } = useProduct();
   const [activeSection, setActiveSection] = useState("reviews");
 
   const handleSetActive = (section) => {

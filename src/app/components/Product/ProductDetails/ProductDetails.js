@@ -8,6 +8,7 @@ import ProductColors from "../ProductColors/ProductColors";
 import ProductSizes from "../ProductSizes/ProductSizes";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
 import ProductButtons from "../ProductSizes/ProductButtons/ProductButtons";
+import { useProduct } from "@/app/context/ProductContext";
 
 const SIZES = [
   {
@@ -30,7 +31,8 @@ const initialState = {
   quantity: 1,
 };
 
-function ProductDetails({ productData }) {
+function ProductDetails() {
+  const { productData } = useProduct();
   const { title, description, discount_price, price, score, products_colors } = productData;
 
   const [product, setProduct] = useState(initialState);
