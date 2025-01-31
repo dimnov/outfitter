@@ -1,0 +1,7 @@
+.cart_products_box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 10%);
+  border-radius: 20px;
+  padding: 2rem 2.4rem;
+}
