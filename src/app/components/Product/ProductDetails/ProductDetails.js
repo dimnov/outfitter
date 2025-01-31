@@ -9,6 +9,7 @@ import ProductSizes from "../ProductSizes/ProductSizes";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
 import ProductButtons from "../ProductSizes/ProductButtons/ProductButtons";
 import { useProduct } from "@/app/context/ProductContext";
+import { useCart } from "@/app/context/CartContext";
 
 const SIZES = [
   {
@@ -36,6 +37,7 @@ function ProductDetails() {
   const { title, description, discount_price, price, score, products_colors } = productData;
 
   const [product, setProduct] = useState(initialState);
+  const { addToCart } = useCart();
 
   const updateProduct = (key, value) => {
     setProduct((prevState) => ({
@@ -49,6 +51,25 @@ function ProductDetails() {
       ...prevState,
       quantity: Math.max(1, prevState.quantity + (action === "add" ? 1 : -1)),
     }));
+  };
+
+  const handleAddToCart = () => {
+    const productToAdd = {
+      id: productData.id,
+      title,
+      price: discount_price || price,
+      color: product.color,
+      size: product.size,
+      quantity: product.quantity,
+    };
+
+    if (!product.color || !product.size) {
+      alert("Please select a color and size before adding to cart.");
+      return;
+    }
+
+    addToCart(productToAdd);
+    alert("Product added to cart!");
   };
 
   return (
@@ -66,7 +87,11 @@ function ProductDetails() {
       <hr />
       <ProductSizes sizes={SIZES} selectedSize={product.size} onClick={updateProduct} />
       <hr />
-      <ProductButtons quantity={product.quantity} onClick={adjustQuantity} />
+      <ProductButtons
+        quantity={product.quantity}
+        onClickQuantity={adjustQuantity}
+        onClickAddToCart={handleAddToCart}
+      />
     </div>
   );
 }
