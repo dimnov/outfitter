@@ -5,6 +5,7 @@ import "./fonts/satoshi.css";
 import "./fonts/integralCF.css";
 import "./globals.css";
 import { AuthProvider } from "./context/AuthProvider";
+import { CartProvider } from "./context/CartContext";
 
 export const metadata = {
   title: "Outfitter - Fashion Online Store",
@@ -29,9 +30,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <CartProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>
