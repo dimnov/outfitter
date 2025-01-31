@@ -12,6 +12,7 @@ async function page({ params }) {
     <section className={styles.product}>
       <hr />
       <ProductProvider productId={productId}>
+        <Breadcrumbs productId={productId} />
         <ProductContainer />
         <ProductSections />
         <ProductOffers />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Breadcrumbs.module.css";
+import { getProductCategory } from "@/app/lib/data-service";
 
 const LINKS = [
   {
@@ -12,7 +13,9 @@ const LINKS = [
   },
 ];
 
-function Breadcrumbs({ category }) {
+async function Breadcrumbs({ productId }) {
+  const category = await getProductCategory(productId);
+
   return (
     <div className={styles.breadcrumbs}>
       <ul className={styles.breadcrumbs_list}>
