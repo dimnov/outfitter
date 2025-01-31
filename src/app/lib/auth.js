@@ -12,7 +12,6 @@ export const register = async (email, password) => {
 };
 
 export const login = async (email, password) => {
-  console.log(email, password);
   const { user, error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
@@ -21,4 +20,12 @@ export const login = async (email, password) => {
   }
 
   return { user };
+};
+
+export const getUser = async () => {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  return user;
 };
