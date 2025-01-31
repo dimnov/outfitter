@@ -1,11 +1,13 @@
 import ProductQuantity from "../../ProductQuantity/ProductQuantity";
 import styles from "./ProductButtons.module.css";
 
-function ProductButtons({ quantity, onClick }) {
+function ProductButtons({ quantity, onClickQuantity, onClickAddToCart }) {
   return (
     <div className={styles.buttons}>
-      <ProductQuantity selectedQuantity={quantity} onClick={onClick} />
-      <button className={styles.buttons_add}>Add to Cart</button>
+      <ProductQuantity selectedQuantity={quantity} onClick={onClickQuantity} />
+      <button className={styles.buttons_add} onClick={onClickAddToCart}>
+        Add to Cart
+      </button>
     </div>
   );
 }
