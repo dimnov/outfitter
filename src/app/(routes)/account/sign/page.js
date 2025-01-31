@@ -1,11 +1,11 @@
 import Figure from "@/app/components/Account/Figure/Figure";
 import FormContainer from "@/app/components/Account/FormContainer/FormContainer";
-import styles from "./Profile.module.css";
+import styles from "./SignForm.module.css";
 
 function page() {
   return (
-    <section className={styles.profile}>
-      <div className={styles.profile_container}>
+    <section className={styles.sign}>
+      <div className={styles.sign_container}>
         <Figure />
         <FormContainer />
       </div>
