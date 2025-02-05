@@ -1,15 +1,17 @@
 import styles from "./ProductColors.module.css";
 
 function ProductColors({ colors, selectedColor, onClick }) {
+  const [selectedColorHex, _] = selectedColor.split("%");
+
   return (
     <div className={styles.colors}>
       <p>Select Color</p>
       <ul className={styles.colors_list}>
-        {colors.map((color) => (
+        {colors.map(({ color_hex, color_name }) => (
           <li
-            key={color.color}
-            className={selectedColor === color.color ? styles.selected : ""}
-            onClick={() => onClick("color", color.color)}
+            key={color_hex}
+            className={selectedColorHex === color_hex ? styles.selected : ""}
+            onClick={() => onClick("color", `${color_hex}%${color_name}`)}
           >
             <svg
               className={styles.circle}
@@ -19,7 +21,7 @@ function ProductColors({ colors, selectedColor, onClick }) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="18.5" cy="18.5" r="18.5" fill={`#${color.color}`} />
+              <circle cx="18.5" cy="18.5" r="18.5" fill={`#${color_hex}`} />
             </svg>
             <svg
               className={styles.checkmark}
