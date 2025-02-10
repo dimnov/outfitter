@@ -1,0 +1,27 @@
+.breadcrumbs {
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumbs_list {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.breadcrumbs_list li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs_list li:last-child {
+  color: #000;
+}
+
+.breadcrumbs_list a {
+  margin-right: 1rem;
+}
+
+.breadcrumbs_list li a::first-letter {
+  text-transform: uppercase;
+}
