@@ -16,8 +16,6 @@
 .box_products_list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-
   column-gap: 2rem;
   row-gap: 3.6rem;
 }
