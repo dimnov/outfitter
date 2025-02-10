@@ -16,3 +16,18 @@
   margin-top: 2rem;
   margin-bottom: 2.4rem;
 }
+
+.buttons_add {
+  max-width: 100%;
+  padding: 1.6rem 5.4rem;
+  border-radius: 62px;
+
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #000;
+}
+
+.buttons_add:hover {
+  background-color: #111111;
+}
