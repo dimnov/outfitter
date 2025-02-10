@@ -1,5 +1,6 @@
-.breadcrumb {
+.breadcrumbs {
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-size: 1.6rem;
   margin-bottom: 2.4rem;

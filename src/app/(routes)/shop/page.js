@@ -1,6 +1,5 @@
 import styles from "./catalog.module.css";
-
-import Breadcrumb from "@/app/components/Catalog/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "@/app/components/Catalog/Breadcrumbs/Breadcrumbs";
 import Filters from "@/app/components/Catalog/Filters/Filters";
 import Products from "@/app/components/Catalog/Products/Products";
 
@@ -8,7 +7,7 @@ async function page() {
   return (
     <section className={styles.catalog}>
       <hr />
-      <Breadcrumb />
+      <Breadcrumbs path={"Shop"} />
       <div className={styles.main}>
         <Filters />
         <Products />
