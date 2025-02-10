@@ -3,8 +3,8 @@ import { getProductsByCriteria } from "@/app/lib/data-service";
 import HomeProductsList from "./HomeProductsList/HomeProductsList";
 
 async function HomeProducts() {
-  const { products: newProducts } = await getProductsByCriteria("latest", "desc", 8);
-  const { products: bestSellingProducts } = await getProductsByCriteria("sold", "desc", 8);
+  const { products: newProducts } = await getProductsByCriteria("latest", "desc", 4);
+  const { products: bestSellingProducts } = await getProductsByCriteria("sold", "desc", 4);
 
   return (
     <section className={styles.home_products}>
