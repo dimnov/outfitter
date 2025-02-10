@@ -1,19 +1,16 @@
 import Link from "next/link";
 import styles from "./CartProductBox.module.css";
 import ProductQuantity from "../../Product/ProductQuantity/ProductQuantity";
+import ProductPriceBox from "../../Catalog/Products/ProductPriceBox/ProductPriceBox";
 
 function CartProductBox({ product }) {
-  const { title, price, color, size, quantity } = product;
+  const { id, title, price, discount_price, color, size, quantity, image } = product;
+  const [color_hex, color_name] = color.split("%");
 
   return (
     <div className={styles.product_box}>
-      <Link href={"#"}>
-        <img
-          className={styles.product_img}
-          src={
-            "https://cngeboyvccurpfdvorce.supabase.co/storage/v1/object/public/products/tshirt.png"
-          }
-        />
+      <Link href={`/products/${id}`}>
+        <img className={styles.product_img} src={image} />
       </Link>
 
       <div className={styles.product_main}>
@@ -25,11 +22,29 @@ function CartProductBox({ product }) {
                 Size: <span>{size}</span>
               </p>
               <p className={styles.product_color}>
-                Color: <span>{color}</span>
+                Color:
+                <svg
+                  className={styles.circle}
+                  width="16"
+                  height="16"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="17.5"
+                    cy="17.5"
+                    r="17.5"
+                    stroke="#000000"
+                    strokeWidth="2"
+                    fill={`#${color_hex}`}
+                  />
+                </svg>
+                ({color_name})
               </p>
             </div>
           </div>
-          <p className={styles.product_price}>${price}</p>
+          <ProductPriceBox discount_price={discount_price} price={price} />
         </div>
         <div className={styles.product_buttons}>
           <button>
@@ -50,7 +65,7 @@ function CartProductBox({ product }) {
           <ProductQuantity
             className={styles.quantity_buttons}
             selectedQuantity={quantity}
-            // onClick={onClick}
+            // onClick={adjustQuantity}
           />
         </div>
       </div>

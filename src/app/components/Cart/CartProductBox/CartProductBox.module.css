@@ -33,6 +33,12 @@
   gap: 0.4rem;
 }
 
+.product_color {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .product_size,
 .product_color {
   font-size: 1.4rem;
@@ -41,6 +47,7 @@
 .product_size span,
 .product_color span {
   color: rgba(0, 0, 0, 60%);
+  text-transform: uppercase;
 }
 
 .product_price {
