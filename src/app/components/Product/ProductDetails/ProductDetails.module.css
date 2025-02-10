@@ -17,7 +17,7 @@
   margin-bottom: 2.4rem;
 }
 
-.buttons_add {
+.button_add {
   max-width: 100%;
   padding: 1.6rem 5.4rem;
   border-radius: 62px;
@@ -28,6 +28,11 @@
   background-color: #000;
 }
 
-.buttons_add:hover {
+.button_add:hover {
   background-color: #111111;
+}
+
+.button_add:disabled {
+  cursor: not-allowed;
+  background-color: #aaaaaa;
 }
