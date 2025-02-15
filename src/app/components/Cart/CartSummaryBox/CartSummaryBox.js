@@ -1,27 +1,34 @@
+"use client";
+
+import { useCart } from "@/app/context/CartContext";
 import styles from "./CartSummaryBox.module.css";
 
 function CartSummaryBox() {
+  const { cartTotalPrice, cartTotalDiscountPrice, cartTotal, deliveryFee } = useCart();
+
   return (
     <div className={styles.cart_summary_box}>
       <p className={styles.cart_summary_title}>Order Summary</p>
       <div className={styles.cart_summary_rows}>
         <div className={styles.cart_summary_row}>
           <p className={styles.cart_summary_row_text}>Subtotal</p>
-          <p className={styles.cart_summary_row_price}>$565</p>
+          <p className={styles.cart_summary_row_price}>${cartTotalPrice.toFixed(2)}</p>
         </div>
         <div className={styles.cart_summary_row}>
-          <p className={styles.cart_summary_row_text}>Discount (-20%)</p>
-          <p className={`${styles.cart_summary_row_price} ${styles.discount}`}>-$565</p>
+          <p className={styles.cart_summary_row_text}>Discount</p>
+          <p className={`${styles.cart_summary_row_price} ${styles.discount}`}>
+            -${cartTotalDiscountPrice.toFixed(2)}
+          </p>
         </div>
         <div className={styles.cart_summary_row}>
           <p className={styles.cart_summary_row_text}>Delivery Fee</p>
-          <p className={styles.cart_summary_row_price}>$565</p>
+          <p className={styles.cart_summary_row_price}>${deliveryFee.toFixed(2)}</p>
         </div>
         <hr />
       </div>
       <div className={styles.last_row}>
         <p className={styles.last_row_text}>Total</p>
-        <p className={styles.last_row_price}>$565</p>
+        <p className={styles.last_row_price}>${(cartTotal + deliveryFee).toFixed(2)}</p>
       </div>
       <div className={styles.cart_summary_promocode}>
         <div className={styles.promocode}>
