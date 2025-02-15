@@ -49,7 +49,7 @@ function CartProductBox({ product }) {
           <ProductPriceBox discount_price={discount_price} price={price} />
         </div>
         <ProductProvider>
-          <CartProductButtons quantity={quantity} />
+          <CartProductButtons productId={id} color={color} size={size} quantity={quantity} />
         </ProductProvider>
       </div>
     </div>
