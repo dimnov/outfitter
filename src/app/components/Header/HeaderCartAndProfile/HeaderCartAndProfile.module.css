@@ -4,17 +4,9 @@
 }
 
 .cart_box {
-  position: relative;
-  display: inline-block;
-}
-
-.dot {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0.9rem;
-  height: 0.9rem;
-  background-color: #f00;
-  border-radius: 50%;
-  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 1.6rem;
 }

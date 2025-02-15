@@ -25,7 +25,7 @@ function HeaderCartAndProfile() {
               fill="black"
             />
           </svg>
-          {cartLength ? <span className={styles.dot} /> : null}
+          <p>{cartLength ? cartLength : null}</p>
         </div>
       </Link>
       <Link href={user ? "/account/settings" : "/account/sign"}>
