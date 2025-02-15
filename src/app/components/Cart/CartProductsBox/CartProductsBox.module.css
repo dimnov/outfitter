@@ -4,4 +4,6 @@
   border: 1px solid rgba(0, 0, 0, 10%);
   border-radius: 20px;
   padding: 2rem 2.4rem;
+  max-height: 70rem;
+  overflow-y: auto;
 }
