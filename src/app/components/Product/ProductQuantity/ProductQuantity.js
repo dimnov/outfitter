@@ -1,9 +1,9 @@
 import styles from "./ProductQuantity.module.css";
 
-function ProductQuantity({ selectedQuantity, onClick }) {
+function ProductQuantity({ selectedQuantity, onClick, productId, color, size }) {
   return (
     <div className={styles.quantity}>
-      <button onClick={onClick}>
+      <button onClick={() => onClick(productId, color, "decrease", size)}>
         <svg
           width="20"
           height="4"
@@ -18,7 +18,7 @@ function ProductQuantity({ selectedQuantity, onClick }) {
         </svg>
       </button>
       <p>{selectedQuantity}</p>
-      <button onClick={() => onClick("add")}>
+      <button onClick={() => onClick(productId, color, "increase", size)}>
         <svg
           width="20"
           height="20"
