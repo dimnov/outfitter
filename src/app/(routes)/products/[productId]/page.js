@@ -1,9 +1,9 @@
 import styles from "./product.module.css";
 import ProductSections from "@/app/components/Product/ProductSections/ProductSections";
 import ProductOffers from "@/app/components/Product/ProductOffers/ProductOffers";
-import Breadcrumbs from "@/app/components/Product/Breadcrumbs/Breadcrumbs";
 import ProductContainer from "@/app/components/Product/ProductContainer/ProductContainer";
 import { ProductProvider } from "@/app/context/ProductContext";
+import ProductBreadcrumbs from "@/app/components/Product/ProductBreadcrumbs/ProductBreadcrumbs";
 import {
   getAllProducts,
   getProduct,
@@ -30,8 +30,13 @@ async function page({ params }) {
   return (
     <section className={styles.product}>
       <hr />
-      <ProductProvider value={{ productData, images, reviews, category }}>
-        <Breadcrumbs productId={productId} />
+      <ProductProvider
+        productData={productData}
+        images={images}
+        reviews={reviews}
+        category={category}
+      >
+        <ProductBreadcrumbs productId={productId} />
         <ProductContainer />
         <ProductSections />
         <ProductOffers />
