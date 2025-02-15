@@ -3,15 +3,3 @@
   margin: 0 auto;
   margin-bottom: 20rem;
 }
-
-.cart_title {
-  font-family: "Integral CF", sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 2.4rem;
-}
-
-.cart_container {
-  display: flex;
-  gap: 2rem;
-}
