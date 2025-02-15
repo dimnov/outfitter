@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import ProductPriceBox from "../../Catalog/Products/ProductPriceBox/ProductPriceBox";
 import StarScore from "../../Icons/StarScore";
 import styles from "./ProductDetails.module.css";
 import ProductColors from "../ProductColors/ProductColors";
 import ProductSizes from "../ProductSizes/ProductSizes";
-import ProductQuantity from "../ProductQuantity/ProductQuantity";
-import ProductButtons from "../ProductSizes/ProductButtons/ProductButtons";
 import { useProduct } from "@/app/context/ProductContext";
 import { useCart } from "@/app/context/CartContext";
+import { useState } from "react";
+import SpinnerMini from "../../Spinner/SpinnerMini/SpinnerMini";
 
 const SIZES = [
   {
@@ -26,50 +25,32 @@ const SIZES = [
   },
 ];
 
-const initialState = {
-  color: "",
-  size: "",
-  quantity: 1,
-};
-
 function ProductDetails() {
-  const { productData } = useProduct();
+  const [loading, setLoading] = useState(false);
+  const { productData, selected, updateProduct } = useProduct();
+  const { addToCart } = useCart();
   const { title, description, discount_price, price, score, products_colors } = productData;
 
-  const [product, setProduct] = useState(initialState);
-  const { addToCart } = useCart();
-
-  const updateProduct = (key, value) => {
-    setProduct((prevState) => ({
-      ...prevState,
-      [key]: value,
-    }));
-  };
-
-  const adjustQuantity = (action) => {
-    setProduct((prevState) => ({
-      ...prevState,
-      quantity: Math.max(1, prevState.quantity + (action === "add" ? 1 : -1)),
-    }));
-  };
+  const notSelected = !selected.color || !selected.size;
 
   const handleAddToCart = () => {
+    if (notSelected) return;
+
+    setLoading(true);
+
     const productToAdd = {
       id: productData.id,
+      image: productData.image_url,
       title,
-      price: discount_price || price,
-      color: product.color,
-      size: product.size,
-      quantity: product.quantity,
+      discount_price,
+      price,
+      color: selected.color,
+      size: selected.size,
+      quantity: selected.quantity,
     };
 
-    if (!product.color || !product.size) {
-      alert("Please select a color and size before adding to cart.");
-      return;
-    }
-
     addToCart(productToAdd);
-    alert("Product added to cart!");
+    setLoading(false);
   };
 
   return (
@@ -81,17 +62,20 @@ function ProductDetails() {
       <hr />
       <ProductColors
         colors={products_colors}
-        selectedColor={product.color}
+        selectedColor={selected.color}
         onClick={updateProduct}
       />
       <hr />
-      <ProductSizes sizes={SIZES} selectedSize={product.size} onClick={updateProduct} />
+      <ProductSizes sizes={SIZES} selectedSize={selected.size} onClick={updateProduct} />
       <hr />
-      <ProductButtons
-        quantity={product.quantity}
-        onClickQuantity={adjustQuantity}
-        onClickAddToCart={handleAddToCart}
-      />
+
+      <button
+        className={styles.button_add}
+        onClick={handleAddToCart}
+        disabled={notSelected || loading}
+      >
+        {loading ? <SpinnerMini /> : "Add to Cart"}
+      </button>
     </div>
   );
 }
