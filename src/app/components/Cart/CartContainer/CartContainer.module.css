@@ -1,0 +1,33 @@
+.cart_title {
+  font-family: "Integral CF", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+.cart_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart_box {
+  display: flex;
+  gap: 2rem;
+}
+
+.empty_cart {
+  display: flex;
+  margin: 4rem auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.back_button {
+  padding: 2rem 4rem;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  border-radius: 60px;
+}
