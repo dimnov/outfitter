@@ -49,10 +49,3 @@
   font-size: 2.4rem;
   font-weight: 700;
 }
-
-.product_buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
