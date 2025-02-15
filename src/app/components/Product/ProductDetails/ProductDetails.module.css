@@ -36,3 +36,8 @@
   cursor: not-allowed;
   background-color: #aaaaaa;
 }
+
+.button_loading {
+  display: flex;
+  gap: 2rem;
+}
