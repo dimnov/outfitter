@@ -1,0 +1,59 @@
+.filter_options_box {
+  cursor: pointer;
+}
+
+.filter_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.8rem;
+}
+
+.filter_title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* .colors_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+} */
+
+.colors_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.colors_list li {
+  position: relative;
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.selected .checkmark {
+  opacity: 1;
+}
+
+.colors_list li:hover {
+  cursor: pointer;
+}
