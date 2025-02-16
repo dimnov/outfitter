@@ -1,0 +1,42 @@
+.filter_options_box {
+  cursor: pointer;
+}
+
+.filter_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.8rem;
+}
+
+.filter_title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.sizes_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.sizes_list li {
+  padding: 0.8rem 1.2rem;
+  border-radius: 62px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.5rem;
+
+  transition: background-color 0.2s ease;
+}
+
+.sizes_list li:hover {
+  background-color: #ececec;
+}
+
+.sizes_list li.active {
+  background-color: #000;
+  color: #fff;
+}
