@@ -1,8 +1,8 @@
 import styles from "./FilterBox.module.css";
 
-function FilterBox({ title }) {
+function FilterBox({ title, toggleIsOpen }) {
   return (
-    <li className={styles.filter_box}>
+    <li className={styles.filter_box} onClick={toggleIsOpen}>
       <p className={styles.filter_title}>{title}</p>
       <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
