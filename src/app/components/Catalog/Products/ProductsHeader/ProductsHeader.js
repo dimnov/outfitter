@@ -3,7 +3,7 @@ import styles from "./ProductsHeader.module.css";
 function ProductsHeader({ totalPerPage, totalCount }) {
   return (
     <header className={styles.header}>
-      <h2>Casual</h2>
+      <h2>Products</h2>
       <div className={styles.options}>
         <p>
           Showing 1-{totalPerPage} of {totalCount} Products
