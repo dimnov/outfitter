@@ -110,6 +110,18 @@ export const getAllTestimonials = async () => {
   return { testimonials: data, count };
 };
 
+export const getAllColors = async () => {
+  const { data, error } = await supabase.from("products_colors").select("color_hex");
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const uniqueColors = [...new Set(data.map((item) => item.color_hex))];
+
+  return { colors: uniqueColors };
+};
+
 export const getProductsByCriteria = async (crit, ord = "asc", amount = 4) => {
   const criteria = crit === "latest" ? "created_at" : crit;
   const order = ord === "asc" ? true : false;
