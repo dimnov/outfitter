@@ -3,10 +3,12 @@
 import { useState } from "react";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 import styles from "./StyleFilter.module.css";
-import FilterBox from "../FilterBox/FilterBox";
+import StyleOptionsFilter from "../StyleOptionsFilter/StyleOptionsFilter";
 
-function StyleFilter() {
-  const [isOpen, setIsOpen] = useState(false);
+const STYLES = ["Casual", "Formal", "Party", "Gym"];
+
+function StyleFilter({ selectedStyle, onClick }) {
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
@@ -31,10 +33,14 @@ function StyleFilter() {
       </div>
 
       <ul className={styles.filters_container}>
-        <FilterBox title={"Casual"} />
-        <FilterBox title={"Formal"} />
-        <FilterBox title={"Party"} />
-        <FilterBox title={"Gym"} />
+        {STYLES.map((style) => (
+          <StyleOptionsFilter
+            key={style}
+            style={style}
+            selectedStyle={selectedStyle}
+            onClick={onClick}
+          />
+        ))}
       </ul>
     </li>
   ) : (

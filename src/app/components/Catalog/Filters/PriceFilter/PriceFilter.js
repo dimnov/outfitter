@@ -4,15 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./PriceFilter.module.css";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 
-function PriceFilter() {
+function PriceFilter({ onClick, minPrice, maxPrice }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(100);
+  const [minValue, setMinValue] = useState(minPrice);
+  const [maxValue, setMaxValue] = useState(maxPrice);
 
   const sliderMinValue = 0;
   const sliderMaxValue = 100;
@@ -25,9 +25,17 @@ function PriceFilter() {
     updateSliderPosition();
   }, [minValue, maxValue]);
 
-  const handleMinSlide = (e) => setMinValue(Number(e.target.value));
+  const handleMinSlide = (e) => {
+    const minNumber = Number(e.target.value);
+    setMinValue(minNumber);
+    onClick("min", minNumber);
+  };
 
-  const handleMaxSlide = (e) => setMaxValue(Number(e.target.value));
+  const handleMaxSlide = (e) => {
+    const maxNumber = Number(e.target.value);
+    setMaxValue(maxNumber);
+    onClick("max", maxNumber);
+  };
 
   const updateSliderPosition = () => {
     if (rangeRef.current && minTooltipRef.current && maxTooltipRef.current) {
