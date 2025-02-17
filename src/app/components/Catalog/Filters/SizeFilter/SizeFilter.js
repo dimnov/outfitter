@@ -4,11 +4,11 @@ import { useState } from "react";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 import styles from "./SizeFilter.module.css";
 
-const SIZES = [{ size: "Small" }, { size: "Medium" }, { size: "Large" }];
+const SIZES = ["Small", "Medium", "Large"];
 
-function SizeFilter() {
+function SizeFilter({ onClick }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("Medium");
+  const [selectedSize, setSelectedSize] = useState("");
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
@@ -16,6 +16,7 @@ function SizeFilter() {
 
   const changeSelectedSize = (size) => {
     setSelectedSize(size);
+    onClick("size", size);
   };
 
   return isOpen ? (
@@ -37,7 +38,7 @@ function SizeFilter() {
       </div>
 
       <ul className={styles.sizes_list}>
-        {SIZES.map(({ size }) => (
+        {SIZES.map((size) => (
           <li
             key={size}
             className={selectedSize === size ? styles.active : ""}
