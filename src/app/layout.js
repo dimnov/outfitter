@@ -1,9 +1,9 @@
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 
-import "./fonts/satoshi.css";
-import "./fonts/integralCF.css";
-import "./globals.css";
+import "./styles/fonts/satoshi.css";
+import "./styles/fonts/integralCF.css";
+import "./styles/globals.css";
 import { AuthProvider } from "./context/AuthProvider";
 import { CartProvider } from "./context/CartContext";
 
