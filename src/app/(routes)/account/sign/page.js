@@ -1,4 +1,4 @@
-import Figure from "@/app/components/Account/Figure/Figure";
+import Figure from "@/app/components/Icons/FigureSVG";
 import FormContainer from "@/app/components/Account/FormContainer/FormContainer";
 import styles from "./SignForm.module.css";
 
