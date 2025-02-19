@@ -6,13 +6,13 @@ import { getProductsPerPage } from "@/app/lib/data-service";
 import ProductsGrid from "./ProductsGrid/ProductsGrid";
 import ProductsHeader from "./ProductsHeader/ProductsHeader";
 import Pagination from "../Pagination/Pagination";
-
 import Loading from "./loading.js";
+
 import styles from "./Products.module.css";
 
 const pageSize = 6;
 
-function Products() {
+function Products({ filters }) {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
@@ -22,7 +22,7 @@ function Products() {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const { products, count } = await getProductsPerPage(page, pageSize);
+        const { products, count } = await getProductsPerPage(page, pageSize, filters);
         setProducts(products);
         setTotalCount(count);
       } catch (error) {
@@ -33,11 +33,9 @@ function Products() {
     };
 
     fetchProducts();
-  }, [page]);
+  }, [page, filters]);
 
   const totalPages = Math.ceil(totalCount / pageSize);
-
-  const currentPageProductCount = products.length;
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -47,7 +45,7 @@ function Products() {
 
   return (
     <div className={styles.products}>
-      <ProductsHeader totalPerPage={currentPageProductCount} totalCount={totalCount} />
+      <ProductsHeader totalPerPage={products.length} totalCount={totalCount} />
 
       {loading ? <Loading /> : <ProductsGrid products={products} />}
 

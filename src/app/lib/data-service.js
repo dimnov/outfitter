@@ -18,20 +18,25 @@ export const getAllImagesFromFolder = async (folderName) => {
   return images;
 };
 
-export const getProductsPerPage = async (page, pageSize) => {
+export const getProductsPerPage = async (page, pageSize, filters) => {
   const start = (page - 1) * pageSize;
   const end = start + pageSize - 1;
 
-  const { data, error, count } = await supabase
-    .from("products")
-    .select("*, products_images(*)", { count: "exact" }) // Count all products for pagination
-    .range(start, end); // Specify the range for pagination
+  let query = supabase.from("products").select("*", { count: "exact" });
+  if (filters?.category) query = query.eq("category", filters.category);
+  // if (filters?.color) query = query.eq("color", filters.color);
+  // if (filters?.size) query = query.eq("size", filters.size);
+  if (filters?.style) query = query.eq("style", filters.style);
+  if (filters?.price?.min) query = query.gte("price", filters.price.min);
+  if (filters?.price?.max) query = query.lte("price", filters.price.max);
+
+  const { data, error, count } = await query.range(start, end);
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return { products: data, count }; // Return products and total count
+  return { products: data, count };
 };
 
 export const getAllProducts = async () => {
