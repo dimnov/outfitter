@@ -1,8 +1,8 @@
 import styles from "./StyleOptionsFilter.module.css";
 
-function StyleOptionsFilter({ style, selectedStyle, onClick, isSelected }) {
+function StyleOptionsFilter({ style, selectedStyle, onChangeFilters }) {
   return (
-    <li className={styles.filter_box} onClick={() => onClick("style", style)}>
+    <li className={styles.filter_box} onClick={() => onChangeFilters("style", style)}>
       <p className={`${styles.filter_title} ${style === selectedStyle ? styles.active : ""}`}>
         {style}
       </p>

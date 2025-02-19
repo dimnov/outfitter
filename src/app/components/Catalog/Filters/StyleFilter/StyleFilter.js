@@ -5,9 +5,9 @@ import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 import styles from "./StyleFilter.module.css";
 import StyleOptionsFilter from "../StyleOptionsFilter/StyleOptionsFilter";
 
-const STYLES = ["Casual", "Formal", "Party", "Gym"];
+const STYLES = ["casual", "formal", "party", "gym"];
 
-function StyleFilter({ selectedStyle, onClick }) {
+function StyleFilter({ selectedStyle, onChangeFilters }) {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleIsOpen = () => {
@@ -38,7 +38,7 @@ function StyleFilter({ selectedStyle, onClick }) {
             key={style}
             style={style}
             selectedStyle={selectedStyle}
-            onClick={onClick}
+            onChangeFilters={onChangeFilters}
           />
         ))}
       </ul>

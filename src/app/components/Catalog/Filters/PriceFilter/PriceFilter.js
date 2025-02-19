@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./PriceFilter.module.css";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 
-function PriceFilter({ onClick, minPrice, maxPrice }) {
+function PriceFilter({ onChangeFilters, minPrice, maxPrice }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {
@@ -28,13 +28,13 @@ function PriceFilter({ onClick, minPrice, maxPrice }) {
   const handleMinSlide = (e) => {
     const minNumber = Number(e.target.value);
     setMinValue(minNumber);
-    onClick("min", minNumber);
+    onChangeFilters("min", minNumber);
   };
 
   const handleMaxSlide = (e) => {
     const maxNumber = Number(e.target.value);
     setMaxValue(maxNumber);
-    onClick("max", maxNumber);
+    onChangeFilters("max", maxNumber);
   };
 
   const updateSliderPosition = () => {
