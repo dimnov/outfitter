@@ -3,10 +3,11 @@
 import { useState } from "react";
 import styles from "./ProductImageGrid.module.css";
 import { useProduct } from "@/app/context/ProductContext";
+import Image from "next/image";
 
 function ProductImageGrid() {
   const { images } = useProduct();
-  const [selectedImage, setSelectedImage] = useState(images[0]?.image_url || null);
+  const [selectedImage, setSelectedImage] = useState(images[0].image_url || null);
 
   const handleSelectImage = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -20,7 +21,9 @@ function ProductImageGrid() {
           className={selectedImage === image_url ? styles.large_square : styles.small_square}
           onClick={() => handleSelectImage(image_url)}
         >
-          <img className={styles.img} src={image_url} />
+          <div className={styles.imageWrapper}>
+            <Image className={styles.img} src={image_url} fill alt="Product image" />
+          </div>
         </li>
       ))}
     </ul>
