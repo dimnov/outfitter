@@ -4,19 +4,17 @@ import { useState } from "react";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 import styles from "./SizeFilter.module.css";
 
-const SIZES = ["Small", "Medium", "Large"];
+const SIZES = ["small", "medium", "large"];
 
-function SizeFilter({ onClick }) {
+function SizeFilter({ selectedSize, onChangeFilters }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("");
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
   };
 
   const changeSelectedSize = (size) => {
-    setSelectedSize(size);
-    onClick("size", size);
+    onChangeFilters("size", size);
   };
 
   return isOpen ? (
