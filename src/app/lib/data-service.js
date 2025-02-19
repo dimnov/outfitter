@@ -44,20 +44,6 @@ export const getAllProducts = async () => {
   return { products: data };
 };
 
-export const getProduct = async (productId) => {
-  const { data, error } = await supabase
-    .from("products")
-    .select("*, products_colors(*)")
-    .eq("id", productId)
-    .single();
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return { productData: data };
-};
-
 export const getProductCategory = async (productId) => {
   const { data, error } = await supabase
     .from("products")
@@ -70,32 +56,6 @@ export const getProductCategory = async (productId) => {
   }
 
   return data ? data.category : null;
-};
-
-export const getProductImages = async (productId) => {
-  const { data, error } = await supabase
-    .from("products_images")
-    .select("id, image_url")
-    .eq("product_id", productId);
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return { images: data };
-};
-
-export const getProductReviews = async (productId) => {
-  const { data, error } = await supabase
-    .from("products_reviews")
-    .select("*")
-    .eq("product_id", productId);
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return { reviews: data };
 };
 
 export const getAllTestimonials = async () => {
@@ -142,4 +102,24 @@ export const getProductsByCriteria = async (crit, ord = "asc", amount = 4) => {
   } catch (err) {
     throw new Error(err.message);
   }
+};
+
+export const getProductDetails = async (productId) => {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*, products_colors(*), products_reviews(*), products_images(id, image_url)")
+    .eq("id", productId)
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return {
+    productData: data,
+    reviews: data.products_reviews,
+    images: data.products_images,
+    colors: data.products_colors,
+    category: data.category,
+  };
 };
