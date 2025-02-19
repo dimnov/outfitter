@@ -1,8 +1,8 @@
 import styles from "./FilterBox.module.css";
 
-function FilterBox({ title, onClick, isSelected }) {
+function FilterBox({ title, onChangeFilters, isSelected }) {
   return (
-    <li className={styles.filter_box} onClick={() => onClick("category", title)}>
+    <li className={styles.filter_box} onClick={() => onChangeFilters("category", title)}>
       <p className={`${styles.filter_title} ${isSelected ? styles.active : ""}`}>{title}</p>
       <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

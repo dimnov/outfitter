@@ -6,6 +6,8 @@ import styles from "./CartSummaryBox.module.css";
 function CartSummaryBox() {
   const { cartTotalPrice, cartTotalDiscountPrice, cartTotal, deliveryFee } = useCart();
 
+  const feeForDelivery = deliveryFee !== 0 ? `$${deliveryFee.toFixed(2)}` : "Free";
+
   return (
     <div className={styles.cart_summary_box}>
       <p className={styles.cart_summary_title}>Order Summary</p>
@@ -22,7 +24,7 @@ function CartSummaryBox() {
         </div>
         <div className={styles.cart_summary_row}>
           <p className={styles.cart_summary_row_text}>Delivery Fee</p>
-          <p className={styles.cart_summary_row_price}>${deliveryFee.toFixed(2)}</p>
+          <p className={styles.cart_summary_row_price}>{feeForDelivery}</p>
         </div>
         <hr />
       </div>

@@ -5,17 +5,15 @@ import styles from "./ColorsFilter.module.css";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 import ColorCircleSVG from "@/app/components/Icons/ColorCircleSVG";
 
-function ColorsFilter({ onClick, colors }) {
+function ColorsFilter({ selectedColor, onChangeFilters, colors }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState("");
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
   };
 
   const changeSelectedColor = (color) => {
-    setSelectedColor(color);
-    onClick("color", color);
+    onChangeFilters("color", color);
   };
 
   return isOpen ? (

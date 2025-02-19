@@ -11,5 +11,6 @@
 .brands_list {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10rem;
 }

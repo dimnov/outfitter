@@ -1,49 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllColors } from "@/app/lib/data-service";
+
 import SettingsIcon from "../../Icons/SettingsIcon";
 import ColorsFilter from "./ColorsFilter/ColorsFilter";
 import FilterBox from "./FilterBox/FilterBox";
-import styles from "./Filters.module.css";
 import PriceFilter from "./PriceFilter/PriceFilter";
 import SizeFilter from "./SizeFilter/SizeFilter";
 import StyleFilter from "./StyleFilter/StyleFilter";
 
-const TITLES = ["Shirts", "T-shirts", "Shorts", "Jeans"];
+import styles from "./Filters.module.css";
 
-const initialState = {
+const TITLES = ["shirts", "t-shirts", "shorts", "jeans"];
+
+const initialFilters = {
   category: "",
-  price: {
-    min: 0,
-    max: 100,
-  },
+  price: { min: 1, max: 300 },
   color: "",
   size: "",
   style: "",
 };
 
-function Filters({colors}) {
-  const [filters, setFilters] = useState(initialState);
+function Filters({ onGetFilters }) {
+  const [filters, setFilters] = useState(initialFilters);
+  const [colors, setColors] = useState([]);
+
+  useEffect(() => {
+    const fetchColors = async () => {
+      const { colors } = await getAllColors();
+      setColors(colors);
+    };
+    fetchColors();
+  }, []);
 
   const changeFilters = (key, value) => {
-    setFilters((prevState) => ({
-      ...prevState,
-      [key]: prevState[key] === value ? "" : value,
-    }));
+    const updatedFilters = {
+      ...filters,
+      [key]: filters[key] === value ? "" : value,
+    };
+    setFilters(updatedFilters);
   };
 
   const handlePriceChange = (type, value) => {
-    setFilters((prevState) => ({
-      ...prevState,
+    const updatedFilters = {
+      ...filters,
       price: {
-        ...prevState.price,
+        ...filters.price,
         [type]: Number(value),
       },
-    }));
+    };
+    setFilters(updatedFilters);
   };
 
   const handleSubmit = () => {
-    console.log(filters);
+    onGetFilters(filters);
   };
 
   return (
@@ -59,22 +70,26 @@ function Filters({colors}) {
             isSelected={filters.category === title}
             key={title}
             title={title}
-            onClick={changeFilters}
+            onChangeFilters={changeFilters}
           />
         ))}
 
         <hr className={styles.filter_line} />
         <PriceFilter
-          onClick={handlePriceChange}
+          onChangeFilters={handlePriceChange}
           minPrice={filters.price.min}
           maxPrice={filters.price.max}
         />
         <hr className={styles.filter_line} />
-        <ColorsFilter onClick={changeFilters} colors={colors}/>
+        <ColorsFilter
+          selectedColor={filters.color}
+          onChangeFilters={changeFilters}
+          colors={colors}
+        />
         <hr className={styles.filter_line} />
-        <SizeFilter onClick={changeFilters} />
+        <SizeFilter selectedSize={filters.size} onChangeFilters={changeFilters} />
         <hr className={styles.filter_line} />
-        <StyleFilter selectedStyle={filters.style} onClick={changeFilters} />
+        <StyleFilter selectedStyle={filters.style} onChangeFilters={changeFilters} />
         <hr className={styles.filter_line} />
       </ul>
 
