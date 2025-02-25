@@ -17,15 +17,17 @@ function Products({ filters }) {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [sortBy, setSortBy] = useState("most-popular");
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const { products, count } = await getProductsPerPage(page, pageSize, filters);
+        const { products, count } = await getProductsPerPage(page, pageSize, filters, sortBy);
         setProducts(products);
         setTotalCount(count);
       } catch (error) {
+        setPage(1);
         console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
@@ -33,7 +35,7 @@ function Products({ filters }) {
     };
 
     fetchProducts();
-  }, [page, filters]);
+  }, [page, filters, sortBy]);
 
   const totalPages = Math.ceil(totalCount / pageSize);
 
@@ -45,7 +47,11 @@ function Products({ filters }) {
 
   return (
     <div className={styles.products}>
-      <ProductsHeader totalPerPage={products.length} totalCount={totalCount} />
+      <ProductsHeader
+        totalPerPage={products.length}
+        totalCount={totalCount}
+        setSortBy={setSortBy}
+      />
 
       {loading ? <Loading /> : <ProductsGrid products={products} />}
 

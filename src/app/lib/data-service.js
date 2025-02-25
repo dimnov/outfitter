@@ -18,7 +18,7 @@ export const getAllImagesFromFolder = async (folderName) => {
   return images;
 };
 
-export const getProductsPerPage = async (page, pageSize, filters) => {
+export const getProductsPerPage = async (page, pageSize, filters, sortBy) => {
   const start = (page - 1) * pageSize;
   const end = start + pageSize - 1;
 
@@ -29,6 +29,10 @@ export const getProductsPerPage = async (page, pageSize, filters) => {
   if (filters?.style) query = query.eq("style", filters.style);
   if (filters?.price?.min) query = query.gte("price", filters.price.min);
   if (filters?.price?.max) query = query.lte("price", filters.price.max);
+
+  if (sortBy === "most-popular") query = query.order("sold", { ascending: false });
+  if (sortBy === "highest-price") query = query.order("price", { ascending: false });
+  if (sortBy === "lowest-price") query = query.order("price", { ascending: true });
 
   const { data, error, count } = await query.range(start, end);
 

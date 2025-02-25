@@ -12,17 +12,8 @@
 
 .options {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   font-size: 1.6rem;
   color: rgba(0, 0, 0, 60%);
-}
-
-.sort {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sort b {
-  color: #000;
 }
