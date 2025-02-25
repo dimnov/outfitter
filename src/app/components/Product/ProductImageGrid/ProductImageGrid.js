@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function ProductImageGrid() {
   const { images } = useProduct();
-  const [selectedImage, setSelectedImage] = useState(images[0].image_url || null);
+  const [selectedImage, setSelectedImage] = useState(images[0]?.image_url || null);
 
   const handleSelectImage = (imageUrl) => {
     setSelectedImage(imageUrl);
