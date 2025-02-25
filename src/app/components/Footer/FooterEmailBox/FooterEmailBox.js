@@ -30,6 +30,8 @@ function FooterEmailBox() {
           <div className={styles.input}>
             <input
               type="email"
+              id="email"
+              autoComplete="email"
               placeholder="Enter your email address"
               value={email}
               onChange={handleEmailChange}

@@ -10,7 +10,7 @@ async function ProductOffers() {
       <h4 className={styles.header}>You might also like</h4>
       <div className={styles.product_offers_products}>
         {products?.map((product) => (
-          <Link href={`/products/${product.id}`} key={product.id}>
+          <Link href={`/products/${product.id}`} key={product.id} aria-label="Go to product's page">
             <ProductBox product={product} />
           </Link>
         ))}

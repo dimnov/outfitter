@@ -22,7 +22,9 @@ function HeaderNavigation() {
       <ul className={styles.nav_list}>
         {LINKS.map((link) => (
           <li key={link.name}>
-            <Link href={link.path}>{link.name}</Link>
+            <Link href={link.path} aria-label={`Go to ${link.name} page`}>
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>

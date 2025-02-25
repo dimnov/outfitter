@@ -8,12 +8,16 @@ function HomeProductsList({ products = [], title, path = "#" }) {
       <p className={styles.box_products_title}>{title}</p>
       <div className={styles.box_products_list}>
         {products.map((product) => (
-          <Link key={product.id} href={`/products/${product.id}`}>
+          <Link
+            key={product.id}
+            href={`/products/${product.id}`}
+            aria-label="Go to this product's page"
+          >
             <ProductBox product={product} />
           </Link>
         ))}
       </div>
-      <Link href={path} className={styles.view_all_button}>
+      <Link href={path} className={styles.view_all_button} aria-label="View all products">
         View All
       </Link>
     </div>

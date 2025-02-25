@@ -16,7 +16,7 @@ function HeaderSearch() {
           fillOpacity="0.4"
         />
       </svg>
-      <input type="text" placeholder="Search for products..." aria-label="Search bar" />
+      <input type="text" id="search" placeholder="Search for products..." aria-label="Search bar" />
     </div>
   );
 }

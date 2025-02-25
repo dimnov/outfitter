@@ -47,7 +47,13 @@ function CartSummaryBox() {
               fillOpacity="0.4"
             />
           </svg>
-          <input type="text" placeholder="Add promo code" aria-label="Promo code bar" />
+          <input
+            type="text"
+            id="promo-code"
+            autoComplete="promo-code"
+            placeholder="Add promo code"
+            aria-label="Promo code bar"
+          />
         </div>
         <button>Apply</button>
       </div>

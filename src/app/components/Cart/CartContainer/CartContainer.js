@@ -23,8 +23,8 @@ function CartContainer() {
       ) : (
         <div className={styles.empty_cart}>
           <h3 className={styles.cart_title}>your cart is empty</h3>
-          <Link href={"/shop"} className={styles.back_button}>
-            Go to Shop
+          <Link href={"/shop"} className={styles.back_button} aria-label="Go to shop page">
+            Go to Products
           </Link>
         </div>
       )}

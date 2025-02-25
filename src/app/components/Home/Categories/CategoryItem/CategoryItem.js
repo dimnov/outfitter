@@ -6,7 +6,7 @@ function CategoryItem({ cat }) {
 
   return (
     <li key={catName} className={`${styles.category_box} ${styles[catName]}`}>
-      <Link href={`/shop?category=${catName}`}>
+      <Link href={`/shop?style=${catName}`} aria-label={`See ${catName} products`}>
         <img src={cat.imageUrl} alt={`${catName} category`} />
       </Link>
     </li>

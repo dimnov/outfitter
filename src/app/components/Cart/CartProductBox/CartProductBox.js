@@ -11,7 +11,7 @@ function CartProductBox({ product }) {
 
   return (
     <div className={styles.product_box}>
-      <Link href={`/products/${id}`}>
+      <Link href={`/products/${id}`} aria-label="Get to product's page">
         <Image src={image} width={124} height={124} alt="product image" />
       </Link>
 

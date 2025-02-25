@@ -28,7 +28,10 @@ function HeaderCartAndProfile() {
           <p>{cartLength ? cartLength : null}</p>
         </div>
       </Link>
-      <Link href={user ? "/account/settings" : "/account/sign"}>
+      <Link
+        href={user ? "/account/settings" : "/account/sign"}
+        aria-label={`${user ? "Go to settings" : "Go to your account"}`}
+      >
         <svg
           width="22"
           height="22"

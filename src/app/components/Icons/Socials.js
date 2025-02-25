@@ -64,16 +64,16 @@ const GitHub = () => {
 function Socials() {
   return (
     <>
-      <Link href={"#"}>
+      <Link href={"#"} aria-label="Visit our socials">
         <Twitter />
       </Link>
-      <Link href={"#"}>
+      <Link href={"#"} aria-label="Visit our socials">
         <Facebook />
       </Link>
-      <Link href={"#"}>
+      <Link href={"#"} aria-label="Visit our socials">
         <Instagram />
       </Link>
-      <Link href={"#"}>
+      <Link href={"#"} aria-label="Visit our socials">
         <GitHub />
       </Link>
     </>

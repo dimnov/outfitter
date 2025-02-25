@@ -21,7 +21,9 @@ async function ProductBreadcrumbs({ productId }) {
       <ul className={styles.breadcrumbs_list}>
         {LINKS.map((link) => (
           <li key={link.title}>
-            <Link href={link.href}>{link.title}</Link>
+            <Link href={link.href} aria-label={`Go to ${link.title} page`}>
+              {link.title}
+            </Link>
             <svg
               width="7"
               height="12"
@@ -38,7 +40,9 @@ async function ProductBreadcrumbs({ productId }) {
           </li>
         ))}
         <li key={styles.category_item}>
-          <Link href={`/shop?category=${category}`}>{category}</Link>
+          <Link href={`/shop?category=${category}`} aria-label={`Check ${category} products`}>
+            {category}
+          </Link>
         </li>
       </ul>
     </div>

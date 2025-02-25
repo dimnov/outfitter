@@ -18,16 +18,24 @@ function FooterNavigation() {
         <p>COMPANY</p>
         <ul>
           <li>
-            <a href="#">About</a>
+            <a href="#" aria-label="Visit About page">
+              About
+            </a>
           </li>
           <li>
-            <a href="#">Features</a>
+            <a href="#" aria-label="Visit Features page">
+              Features
+            </a>
           </li>
           <li>
-            <a href="#">Works</a>
+            <a href="#" aria-label="Visit Works page">
+              Works
+            </a>
           </li>
           <li>
-            <a href="#">Career</a>
+            <a href="#" aria-label="Visit Career page">
+              Career
+            </a>
           </li>
         </ul>
       </div>
@@ -35,16 +43,24 @@ function FooterNavigation() {
         <p>HELP</p>
         <ul>
           <li>
-            <a href="#">Support</a>
+            <a href="#" aria-label="Visit Support page">
+              Support
+            </a>
           </li>
           <li>
-            <a href="#">Delivery</a>
+            <a href="#" aria-label="Visit Delivery page">
+              Delivery
+            </a>
           </li>
           <li>
-            <a href="#">Terms & Conditions</a>
+            <a href="#" aria-label="Visit Terms & Conditions page">
+              Terms & Conditions
+            </a>
           </li>
           <li>
-            <a href="#">Privacy Policy</a>
+            <a href="#" aria-label="Visit Privacy Policy page">
+              Privacy Policy
+            </a>
           </li>
         </ul>
       </div>
@@ -52,16 +68,24 @@ function FooterNavigation() {
         <p>FAQ</p>
         <ul>
           <li>
-            <a href="#">Account</a>
+            <a href="#" aria-label="Visit Account page">
+              Account
+            </a>
           </li>
           <li>
-            <a href="#">Deliveries</a>
+            <a href="#" aria-label="Visit Deliveries page">
+              Deliveries
+            </a>
           </li>
           <li>
-            <a href="#">Orders</a>
+            <a href="#" aria-label="Visit Orders page">
+              Orders
+            </a>
           </li>
           <li>
-            <a href="#">Payments</a>
+            <a href="#" aria-label="Visit Payments page">
+              Payments
+            </a>
           </li>
         </ul>
       </div>
@@ -69,16 +93,24 @@ function FooterNavigation() {
         <p>RESOURCES</p>
         <ul>
           <li>
-            <a href="#">Free eBooks</a>
+            <a href="#" aria-label="Visit Free eBooks page">
+              Free eBooks
+            </a>
           </li>
           <li>
-            <a href="#">Development</a>
+            <a href="#" aria-label="Visit Development page">
+              Development
+            </a>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <a href="#" aria-label="Visit Blog page">
+              Blog
+            </a>
           </li>
           <li>
-            <a href="#">Playlist</a>
+            <a href="#" aria-label="Visit Playlist page">
+              Playlist
+            </a>
           </li>
         </ul>
       </div>

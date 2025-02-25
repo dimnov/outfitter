@@ -9,7 +9,7 @@ function HeroHeader() {
         Browse through our diverse range of meticulously crafted garments, designed to bring out
         your individuality and cater to your sense of style.
       </p>
-      <Link href="shop" className={styles.shop_button}>
+      <Link href="shop" className={styles.shop_button} aria-label="Go to category page">
         Shop Now
       </Link>
     </header>

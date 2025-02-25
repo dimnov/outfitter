@@ -87,7 +87,11 @@ function FormContainer() {
           {error && <ErrorMessage message={error} />}
         </div>
         {!newUser && (
-          <Link className={styles.forget_password} href="#">
+          <Link
+            className={styles.forget_password}
+            href="#"
+            aria-label="Click to change your password"
+          >
             Forget Password?
           </Link>
         )}
