@@ -10,7 +10,7 @@ import Loading from "./loading.js";
 
 import styles from "./Products.module.css";
 
-const pageSize = 6;
+const pageSize = 12;
 
 function Products({ filters }) {
   const [products, setProducts] = useState([]);
