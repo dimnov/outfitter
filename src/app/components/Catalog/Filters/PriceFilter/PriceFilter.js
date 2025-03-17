@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./PriceFilter.module.css";
 import FilterOptionsBox from "../FilterOptionsBox/FilterOptionsBox";
 
@@ -21,10 +21,6 @@ function PriceFilter({ onChangeFilters, minPrice, maxPrice }) {
   const minTooltipRef = useRef(null);
   const maxTooltipRef = useRef(null);
 
-  useEffect(() => {
-    updateSliderPosition();
-  }, [minValue, maxValue]);
-
   const handleMinSlide = (e) => {
     const minNumber = Number(e.target.value);
     setMinValue(minNumber);
@@ -37,7 +33,7 @@ function PriceFilter({ onChangeFilters, minPrice, maxPrice }) {
     onChangeFilters("max", maxNumber);
   };
 
-  const updateSliderPosition = () => {
+  const updateSliderPosition = useCallback(() => {
     if (rangeRef.current && minTooltipRef.current && maxTooltipRef.current) {
       const range = rangeRef.current;
       const minTooltip = minTooltipRef.current;
@@ -53,7 +49,11 @@ function PriceFilter({ onChangeFilters, minPrice, maxPrice }) {
       }%`;
       maxTooltip.style.right = `${100 - (maxValue / sliderMaxValue) * 100}%`;
     }
-  };
+  }, [minValue, maxValue, sliderMinValue, sliderMaxValue]);
+
+  useEffect(() => {
+    updateSliderPosition();
+  }, [minValue, maxValue, updateSliderPosition]);
 
   return isOpen ? (
     <li className={styles.filter_options_box}>

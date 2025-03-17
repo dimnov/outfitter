@@ -27,7 +27,9 @@ function Products({ filters }) {
         setProducts(products);
         setTotalCount(count);
       } catch (error) {
-        setPage(1);
+        if (products.length === 0) {
+          setPage(1); // Only reset if no products found or if necessary
+        }
         console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
@@ -35,7 +37,7 @@ function Products({ filters }) {
     };
 
     fetchProducts();
-  }, [page, filters, sortBy]);
+  }, [page, filters, sortBy, products.length]);
 
   const totalPages = Math.ceil(totalCount / pageSize);
 

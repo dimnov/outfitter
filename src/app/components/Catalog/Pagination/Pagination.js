@@ -24,6 +24,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
     onPageChange(pageNum);
   };
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     window.scrollTo({
       top: 0,
