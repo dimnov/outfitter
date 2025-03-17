@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Outfitter
 
-## Getting Started
+A clothing store web application built intentionally **without additional libraries**, using **Next.js**, **Supabase**, and **module CSS**. The focus of this project was to implement all features from scratch, showcasing pure skill with the core technologies.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🌟 Home Page
+- Hero section displaying the store's main message.
+- Display of **New Arrivals** and **Top Sellers**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🛒 Shop Page
+- Browse all products with:
+  - Filters: Category, Price, Color, Size, and Style (Casual, Formal, Gym, Party)
+  - Sorting: By price, popularity, etc.
+  - Search functionality.
+  - Pagination system for efficient browsing.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 📄 Product Page
+- Detailed view of each product with:
+  - Product images.
+  - Description, price, and available options.
+  - Ratings and reviews.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🛒 Cart & Checkout
+- Cart page displaying selected products.
+- Integrated **Stripe** checkout for secure payments.
 
-## Learn More
+### 🔒 User Authentication
+- User signup and login with **Supabase**.
+- View purchase history.
+- Favorite products for easy access later.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Why No Additional Libraries?
+The goal was to demonstrate proficiency with **Next.js**, **Supabase**, and **React** without relying on UI frameworks, styling libraries, or state management tools. Everything from styling to state handling was implemented manually.
