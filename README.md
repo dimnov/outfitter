@@ -1,4 +1,4 @@
-# Outfitter
+# [Outfitter](https://outfitter-dimnov.netlify.app/)
 
 A clothing store web application built intentionally **without additional libraries**, using **Next.js**, **Supabase**, and **module CSS**. The focus of this project was to implement all features from scratch, showcasing pure skill with the core technologies.
 
