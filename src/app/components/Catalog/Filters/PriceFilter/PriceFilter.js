@@ -14,8 +14,8 @@ function PriceFilter({ onChangeFilters, minPrice, maxPrice }) {
   const [minValue, setMinValue] = useState(minPrice);
   const [maxValue, setMaxValue] = useState(maxPrice);
 
-  const sliderMinValue = 0;
-  const sliderMaxValue = 100;
+  const sliderMinValue = 1;
+  const sliderMaxValue = 300;
 
   const rangeRef = useRef(null);
   const minTooltipRef = useRef(null);
