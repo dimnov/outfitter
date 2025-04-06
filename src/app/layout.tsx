@@ -1,11 +1,12 @@
-import Footer from "@/app/components/Footer/Footer";
-import Header from "@/app/components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 import "./styles/fonts/satoshi.css";
 import "./styles/fonts/integralCF.css";
 import "./styles/globals.css";
 import { AuthProvider } from "./context/AuthProvider";
 import { CartProvider } from "./context/CartContext";
+import { ReactNode } from "react";
 
 export const metadata = {
   title: "Outfitter - Fashion Online Store",
@@ -25,7 +26,7 @@ export const metadata = {
   manifest: "/manifest.json",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
