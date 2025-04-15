@@ -2,3 +2,9 @@
   position: relative;
   min-width: 124rem;
 }
+
+@media screen and (max-width: 375px) {
+  .footer {
+    min-width: 375px;
+  }
+}
