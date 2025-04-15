@@ -25,3 +25,10 @@
 .breadcrumbs_list li a::first-letter {
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 375px) {
+  .breadcrumbs_list {
+    justify-content: center;
+    font-size: 2rem;
+  }
+}

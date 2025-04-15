@@ -9,3 +9,12 @@
   max-width: 124rem;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 375px) {
+  .header {
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -16,3 +16,9 @@
 .nav_list li:active {
   font-weight: 700;
 }
+
+@media screen and (max-width: 375px) {
+  .nav_list {
+    font-size: 1.8rem;
+  }
+}
